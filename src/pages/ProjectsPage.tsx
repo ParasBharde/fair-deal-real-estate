@@ -44,21 +44,21 @@ export default function ProjectsPage() {
   });
 
   return (
-    <main className="min-h-screen bg-section-glow px-4 py-8 text-white md:px-8">
+    <main className="min-h-screen bg-section-glow px-4 py-8 text-body md:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="rounded-[2.3rem] border border-primary/18 bg-[linear-gradient(180deg,rgba(var(--color-surface),0.92),rgba(var(--color-background),0.98))] p-7 shadow-panel md:p-10">
           <p className="text-xs uppercase tracking-[0.34em] text-primary/85">Project Directory</p>
           <div className="mt-4 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <h1 className="text-5xl leading-[0.92] text-accent-light md:text-7xl">All Projects</h1>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-stone-300 md:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-text md:text-base">
                 Browse the current FAIR DEAL REAL ESTATE listing set across Akurdi, Nigdi, Ravet,
                 Kiwale, and Wakad. This page is built for cleaner comparison than the hero map.
               </p>
             </div>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-accent-light transition hover:border-primary/30 hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-full border border-glass-border bg-glass px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-accent-light transition hover:border-primary/30 hover:text-primary"
             >
               Back to Home
             </Link>
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
 
           <div className="mt-5 grid gap-5 md:grid-cols-2">
             <div>
-              <p className="mb-3 text-[10px] uppercase tracking-[0.24em] text-stone-400">Area</p>
+              <p className="mb-3 text-[10px] uppercase tracking-[0.24em] text-muted-text-more">Area</p>
               <div className="flex flex-wrap gap-2">
                 {["All", ...neighborhoods.map((item) => item.name)].map((area) => (
                   <button
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
                     className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition ${
                       areaFilter === area
                         ? "border-primary bg-primary/15 text-primary"
-                        : "border-white/12 bg-white/5 text-stone-300 hover:border-primary/30 hover:text-primary"
+                        : "border-glass-border bg-glass text-muted-text hover:border-primary/30 hover:text-primary"
                     }`}
                   >
                     {area}
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
             </div>
 
             <div>
-              <p className="mb-3 text-[10px] uppercase tracking-[0.24em] text-stone-400">Configuration</p>
+              <p className="mb-3 text-[10px] uppercase tracking-[0.24em] text-muted-text-more">Configuration</p>
               <div className="flex flex-wrap gap-2">
                 {configurationOptions.map((item) => (
                   <button
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
                     className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition ${
                       configurationFilter === item
                         ? "border-primary bg-primary/15 text-primary"
-                        : "border-white/12 bg-white/5 text-stone-300 hover:border-primary/30 hover:text-primary"
+                        : "border-glass-border bg-glass text-muted-text hover:border-primary/30 hover:text-primary"
                     }`}
                   >
                     {item}
@@ -130,12 +130,12 @@ export default function ProjectsPage() {
                   {property.area}
                 </div>
                 <h2 className="mt-3 text-3xl text-accent-light">{property.title}</h2>
-                <p className="mt-2 text-lg font-semibold text-white">
+                <p className="mt-2 text-lg font-semibold text-heading">
                   {property.configuration} - {property.price}
                 </p>
-                <p className="mt-4 text-sm leading-7 text-stone-300">{property.summary}</p>
+                <p className="mt-4 text-sm leading-7 text-muted-text">{property.summary}</p>
                 <div className="mt-5 flex items-center justify-between gap-3">
-                  <p className="text-xs uppercase tracking-[0.22em] text-stone-400">{property.size}</p>
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-text-more">{property.size}</p>
                   <Link
                     to={`/projects/${property.id}`}
                     className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary transition hover:bg-primary/25"

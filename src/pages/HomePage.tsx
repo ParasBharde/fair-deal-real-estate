@@ -40,11 +40,11 @@ export default function HomePage() {
   });
 
   return (
-    <main className="bg-black text-white">
+    <main className="bg-background text-body">
       <div ref={heroRef}>
         <Suspense
           fallback={
-            <div className="grid h-screen min-h-[760px] place-items-center bg-surface text-zinc-300">
+            <div className="grid h-screen min-h-[760px] place-items-center bg-surface text-muted-text">
               Loading interactive PCMC map...
             </div>
           }

@@ -14,6 +14,32 @@
   --color-accent-light: 246, 237, 210; /* Sand: #F6EDD2 */
   --color-bronze: 143, 107, 34;      /* Bronze: #8F6B22 */
   --color-ink: 12, 12, 12;           /* Ink: #0C0C0C */
+  
+  /* Additional Accents */
+  --color-accent-gold: 255, 247, 223;
+  --color-accent-sand: 248, 243, 222;
+  --color-muted-gold: 202, 191, 152;
+  
+  /* Midnight Variants */
+  --color-midnight-8: 8, 8, 8;
+  --color-midnight-10: 10, 10, 10;
+  --color-midnight-14: 14, 14, 14;
+  --color-midnight-16: 16, 16, 16;
+  --color-midnight-18: 18, 18, 18;
+  --color-midnight-20: 20, 20, 20;
+  --color-midnight-24: 24, 24, 24;
+  --color-midnight-28: 28, 28, 28;
+  --color-midnight-30: 30, 30, 30;
+  
+  /* Additional UI Tokens */
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+  --color-stone-200: 231, 229, 228;
+  --color-stone-300: 214, 211, 209;
+  --color-stone-400: 168, 162, 158;
+  --color-stone-500: 120, 113, 108;
+  --color-zinc-200: 228, 228, 231;
+  --color-zinc-300: 212, 212, 216;
 
   /* Semantic Mappings */
   --bg: rgb(var(--color-background));
@@ -21,7 +47,20 @@
   --panel: rgba(var(--color-surface), 0.78);
   --panel-strong: rgba(var(--color-surface), 0.92);
   --line: rgba(var(--color-primary), 0.22);
-  --muted: #cabf98;
+  --muted: rgb(var(--color-muted-gold));
+  
+  /* Text Semantic Mappings */
+  --text-heading: rgb(var(--color-white));
+  --text-body: rgb(var(--color-accent-light));
+  --text-muted: rgb(var(--color-stone-300));
+  --text-muted-more: rgb(var(--color-stone-400));
+  --text-muted-less: rgb(var(--color-stone-200));
+  
+  /* Glass Effects */
+  --glass-bg: rgba(var(--color-white), 0.05);
+  --glass-bg-strong: rgba(var(--color-white), 0.1);
+  --glass-border: rgba(var(--color-white), 0.12);
+  --glass-border-light: rgba(var(--color-white), 0.08);
 }
 
 * {
@@ -43,9 +82,9 @@ body {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 12% 12%, rgba(212, 175, 55, 0.08), transparent 22%),
-    radial-gradient(circle at 88% 2%, rgba(212, 175, 55, 0.06), transparent 16%),
-    linear-gradient(180deg, #080808 0%, #000 100%);
+    radial-gradient(circle at 12% 12%, rgba(var(--color-primary), 0.08), transparent 22%),
+    radial-gradient(circle at 88% 2%, rgba(var(--color-primary), 0.06), transparent 16%),
+    linear-gradient(180deg, rgb(var(--color-midnight-8)) 0%, rgb(var(--color-black)) 100%);
   color: var(--text);
   overflow-x: hidden;
 }
@@ -59,8 +98,8 @@ h4 {
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.24);
-  color: #fff7df;
+  background: rgba(var(--color-primary), 0.24);
+  color: rgb(var(--color-accent-gold));
 }
 
 .section-shell {
@@ -72,22 +111,22 @@ h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 10% 0%, rgba(212, 175, 55, 0.08), transparent 25%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 35%);
+    radial-gradient(circle at 10% 0%, rgba(var(--color-primary), 0.08), transparent 25%),
+    linear-gradient(180deg, rgba(var(--color-white), 0.02), transparent 35%);
   pointer-events: none;
 }
 
 .glass-panel {
-  background: linear-gradient(180deg, rgba(30, 30, 30, 0.72), rgba(14, 14, 14, 0.9));
-  border: 1px solid rgba(212, 175, 55, 0.18);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+  background: linear-gradient(180deg, rgba(var(--color-midnight-30), 0.72), rgba(var(--color-midnight-14), 0.9));
+  border: 1px solid rgba(var(--color-primary), 0.18);
+  box-shadow: 0 18px 50px rgba(var(--color-black), 0.38);
   backdrop-filter: blur(18px);
 }
 
 .gold-grid {
   background-image:
-    linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(var(--color-primary), 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--color-primary), 0.04) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
@@ -107,19 +146,19 @@ h4 {
 }
 
 .maplibregl-popup-close-button {
-  color: #f8f3de;
+  color: rgb(var(--color-accent-sand));
   font-size: 16px;
 }
 
 .maplibregl-popup-tip {
-  border-top-color: rgba(26, 26, 26, 0.95);
-  border-bottom-color: rgba(26, 26, 26, 0.95);
+  border-top-color: rgba(var(--color-surface), 0.95);
+  border-bottom-color: rgba(var(--color-surface), 0.95);
 }
 
 .maplibregl-ctrl-group {
-  border: 1px solid rgba(212, 175, 55, 0.18);
-  background: rgba(10, 10, 10, 0.7);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(var(--color-primary), 0.18);
+  background: rgba(var(--color-midnight-10), 0.7);
+  box-shadow: 0 10px 30px rgba(var(--color-black), 0.45);
 }
 
 .maplibregl-ctrl button span {
@@ -127,10 +166,10 @@ h4 {
 }
 
 .maplibregl-ctrl-attrib {
-  background: rgba(10, 10, 10, 0.62) !important;
-  color: rgba(255, 248, 221, 0.72) !important;
+  background: rgba(var(--color-midnight-10), 0.62) !important;
+  color: rgba(var(--color-accent-sand), 0.72) !important;
 }
 
 .maplibregl-ctrl-attrib a {
-  color: rgba(212, 175, 55, 0.88) !important;
+  color: rgba(var(--color-primary), 0.88) !important;
 }

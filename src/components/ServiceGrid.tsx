@@ -22,7 +22,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
             <p className="text-xs uppercase tracking-[0.3em] text-primary">Consulting Stack</p>
             <h2 className="mt-3 text-4xl leading-none text-accent-light md:text-6xl">End-to-end real estate services.</h2>
           </div>
-          <p className="max-w-xl text-sm leading-7 text-stone-300">
+          <p className="max-w-xl text-sm leading-7 text-muted-text">
             Structured to feel premium but practical: legal depth, transactional control, rental
             handling, and maintenance support in one system.
           </p>
@@ -56,7 +56,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                   </span>
                   <div>
                     <h3 className="text-3xl leading-none text-accent-light">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-stone-300">{service.description}</p>
+                    <p className="mt-3 text-sm leading-7 text-muted-text">{service.description}</p>
                   </div>
                 </div>
               </motion.article>

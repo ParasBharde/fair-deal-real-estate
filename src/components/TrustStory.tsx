@@ -32,7 +32,7 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
             A rental-first,
             <span className="block text-primary">customer-shaped consulting model.</span>
           </h2>
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-stone-300 md:text-base">
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-text md:text-base">
             FAIR DEAL REAL ESTATE is positioned around practical need, not generic inventory
             pushing. The offer is clear: transparent advice, sharper locality selection, legal
             support, and real after-deal help across the PCMC market.
@@ -42,7 +42,7 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
             {highlights.map((item) => (
               <div key={item.id} className="glass-panel rounded-3xl p-5">
                 <p className="text-3xl font-semibold text-primary md:text-4xl">{item.value}</p>
-                <p className="mt-2 text-sm leading-6 text-stone-300">{item.label}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-text">{item.label}</p>
               </div>
             ))}
           </div>
@@ -76,7 +76,7 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
                   </span>
                   <div>
                     <h3 className="text-xl text-accent-light">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-stone-300">{item.description}</p>
+                    <p className="mt-2 text-sm leading-6 text-muted-text">{item.description}</p>
                   </div>
                 </div>
               </motion.article>

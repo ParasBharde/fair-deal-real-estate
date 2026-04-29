@@ -17,7 +17,7 @@ export default function TestimonialSection({ testimonials }: TestimonialSectionP
               Written trust beats polished claims.
             </h2>
           </div>
-          <p className="max-w-xl text-sm leading-7 text-stone-300">
+          <p className="max-w-xl text-sm leading-7 text-muted-text">
             The brand tone should feel human and customer-oriented. These cards are shaped around
             that: clear outcomes, direct language, and local context.
           </p>
@@ -43,10 +43,10 @@ export default function TestimonialSection({ testimonials }: TestimonialSectionP
                 </div>
                 <Quote className="text-primary/70" size={20} />
               </div>
-              <p className="mt-5 text-sm leading-7 text-stone-200">"{item.quote}"</p>
+              <p className="mt-5 text-sm leading-7 text-muted-text-less">"{item.quote}"</p>
               <div className="mt-6 border-t border-primary/15 pt-4">
                 <p className="text-base font-semibold text-accent-light">{item.name}</p>
-                <p className="text-sm text-stone-400">
+                <p className="text-sm text-muted-text-more">
                   {item.role} • {item.area}
                 </p>
               </div>

@@ -21,7 +21,7 @@ export default function PropertyConciergeForm() {
           <h2 className="mt-4 text-4xl leading-none text-accent-light md:text-5xl">
             Brief us once. Get a smarter shortlist back.
           </h2>
-          <p className="mt-5 text-sm leading-7 text-stone-200">
+          <p className="mt-5 text-sm leading-7 text-muted-text-less">
             The form is intentionally minimal. The tone should feel premium and low-friction, not
             like a lead dump page.
           </p>
@@ -32,7 +32,7 @@ export default function PropertyConciergeForm() {
                 <ClipboardCheck size={18} />
                 <p className="text-sm font-semibold uppercase tracking-[0.22em]">Clear requirement capture</p>
               </div>
-              <p className="mt-3 text-sm leading-6 text-stone-300">
+              <p className="mt-3 text-sm leading-6 text-muted-text">
                 Budget, locality, purpose, and timing are enough to start a meaningful conversation.
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function PropertyConciergeForm() {
                 <PhoneCall size={18} />
                 <p className="text-sm font-semibold uppercase tracking-[0.22em]">Fast response flow</p>
               </div>
-              <p className="mt-3 text-sm leading-6 text-stone-300">
+              <p className="mt-3 text-sm leading-6 text-muted-text">
                 Designed for direct follow-up, not endless back-and-forth before the first shortlist.
               </p>
             </div>
@@ -59,22 +59,22 @@ export default function PropertyConciergeForm() {
             <input
               type="text"
               placeholder="Full Name"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
               required
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
               required
             />
             <input
               type="text"
               placeholder="Preferred Area"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
             />
             <select
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading focus:border-primary/45 focus:outline-none"
               defaultValue=""
             >
               <option value="" disabled>
@@ -86,7 +86,7 @@ export default function PropertyConciergeForm() {
               <option value="100-plus">1Cr+</option>
             </select>
             <select
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading focus:border-primary/45 focus:outline-none"
               defaultValue=""
             >
               <option value="" disabled>
@@ -100,12 +100,12 @@ export default function PropertyConciergeForm() {
             <input
               type="text"
               placeholder="Preferred Configuration"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
             />
             <textarea
               placeholder="Tell us what matters most: possession timeline, rental yield, school access, legal clarity, low maintenance, or anything else."
               rows={5}
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none md:col-span-2"
+              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none md:col-span-2"
             />
             <button
               type="submit"
