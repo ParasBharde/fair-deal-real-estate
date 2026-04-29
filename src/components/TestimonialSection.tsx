@@ -12,8 +12,8 @@ export default function TestimonialSection({ testimonials }: TestimonialSectionP
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Testimonials</p>
-            <h2 className="mt-3 text-4xl leading-none text-sand md:text-6xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary">Testimonials</p>
+            <h2 className="mt-3 text-4xl leading-none text-accent-light md:text-6xl">
               Written trust beats polished claims.
             </h2>
           </div>
@@ -34,18 +34,18 @@ export default function TestimonialSection({ testimonials }: TestimonialSectionP
               className="glass-panel rounded-[2rem] p-6"
             >
               <div className="flex items-center justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-full border border-gold/30 bg-gold/10 text-sm font-semibold text-gold">
+                <div className="grid h-12 w-12 place-items-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-primary">
                   {item.name
                     .split(" ")
                     .map((part) => part[0])
                     .join("")
                     .slice(0, 2)}
                 </div>
-                <Quote className="text-gold/70" size={20} />
+                <Quote className="text-primary/70" size={20} />
               </div>
               <p className="mt-5 text-sm leading-7 text-stone-200">"{item.quote}"</p>
-              <div className="mt-6 border-t border-gold/15 pt-4">
-                <p className="text-base font-semibold text-sand">{item.name}</p>
+              <div className="mt-6 border-t border-primary/15 pt-4">
+                <p className="text-base font-semibold text-accent-light">{item.name}</p>
                 <p className="text-sm text-stone-400">
                   {item.role} • {item.area}
                 </p>

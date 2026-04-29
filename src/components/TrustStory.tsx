@@ -24,13 +24,13 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-gold">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-primary">
             <Sparkles size={14} />
             Why Clients Return
           </div>
-          <h2 className="mt-5 text-4xl leading-none text-sand md:text-6xl">
+          <h2 className="mt-5 text-4xl leading-none text-accent-light md:text-6xl">
             A rental-first,
-            <span className="block text-gold">customer-shaped consulting model.</span>
+            <span className="block text-primary">customer-shaped consulting model.</span>
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-7 text-stone-300 md:text-base">
             FAIR DEAL REAL ESTATE is positioned around practical need, not generic inventory
@@ -41,7 +41,7 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {highlights.map((item) => (
               <div key={item.id} className="glass-panel rounded-3xl p-5">
-                <p className="text-3xl font-semibold text-gold md:text-4xl">{item.value}</p>
+                <p className="text-3xl font-semibold text-primary md:text-4xl">{item.value}</p>
                 <p className="mt-2 text-sm leading-6 text-stone-300">{item.label}</p>
               </div>
             ))}
@@ -71,11 +71,11 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
                 className="glass-panel rounded-3xl p-5"
               >
                 <div className="flex items-start gap-4">
-                  <span className="rounded-2xl border border-gold/20 bg-gold/10 p-3 text-gold">
+                  <span className="rounded-2xl border border-primary/20 bg-primary/10 p-3 text-primary">
                     <Icon size={20} />
                   </span>
                   <div>
-                    <h3 className="text-xl text-sand">{item.title}</h3>
+                    <h3 className="text-xl text-accent-light">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-stone-300">{item.description}</p>
                   </div>
                 </div>

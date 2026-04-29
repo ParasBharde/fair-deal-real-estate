@@ -6,11 +6,21 @@
 
 :root {
   color-scheme: dark;
-  --bg: #050505;
-  --panel: rgba(16, 16, 16, 0.78);
-  --panel-strong: rgba(22, 22, 22, 0.92);
-  --line: rgba(212, 175, 55, 0.22);
-  --text: #f6edd2;
+  
+  /* Centralized Color Tokens (RGB Triplets) */
+  --color-primary: 212, 175, 55;    /* Gold: #D4AF37 */
+  --color-background: 5, 5, 5;      /* Midnight: #050505 */
+  --color-surface: 26, 26, 26;       /* Charcoal: #1A1A1A */
+  --color-accent-light: 246, 237, 210; /* Sand: #F6EDD2 */
+  --color-bronze: 143, 107, 34;      /* Bronze: #8F6B22 */
+  --color-ink: 12, 12, 12;           /* Ink: #0C0C0C */
+
+  /* Semantic Mappings */
+  --bg: rgb(var(--color-background));
+  --text: rgb(var(--color-accent-light));
+  --panel: rgba(var(--color-surface), 0.78);
+  --panel-strong: rgba(var(--color-surface), 0.92);
+  --line: rgba(var(--color-primary), 0.22);
   --muted: #cabf98;
 }
 

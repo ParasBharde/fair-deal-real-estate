@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { neighborhoods, pcmcCenter, properties, propertyGeoJson } from "../data/content";
 import type { Neighborhood, Property } from "../types";
+import { themeColors } from "../lib/theme";
 
 interface MapHeroProps {
   focusArea: Neighborhood;
@@ -130,7 +131,7 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
         source: sourceId,
         paint: {
           "circle-radius": ["interpolate", ["linear"], ["zoom"], 10, 11, 15, 20],
-          "circle-color": "rgba(212, 175, 55, 0.18)"
+          "circle-color": themeColors.primaryAlpha(0.18)
         }
       });
 
@@ -140,7 +141,7 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
         source: sourceId,
         paint: {
           "circle-radius": ["interpolate", ["linear"], ["zoom"], 10, 5, 15, 8],
-          "circle-color": "#D4AF37",
+          "circle-color": themeColors.primary,
           "circle-stroke-color": "#171717",
           "circle-stroke-width": 2,
           "circle-opacity": 0.98
@@ -155,7 +156,7 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
         paint: {
           "circle-radius": ["interpolate", ["linear"], ["zoom"], 10, 8, 15, 12],
           "circle-color": "#fff4d0",
-          "circle-stroke-color": "#D4AF37",
+          "circle-stroke-color": themeColors.primary,
           "circle-stroke-width": 3
         }
       });
@@ -262,20 +263,20 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
   };
 
   return (
-    <section className="relative overflow-hidden border-b border-gold/12 bg-section-glow px-4 pb-10 pt-4 md:px-8 md:pb-12 md:pt-6">
+    <section className="relative overflow-hidden border-b border-primary/12 bg-section-glow px-4 pb-10 pt-4 md:px-8 md:pb-12 md:pt-6">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <p className="text-sm font-medium uppercase tracking-[0.38em] text-gold/85">
+          <p className="text-sm font-medium uppercase tracking-[0.38em] text-primary">
             FAIR DEAL REAL ESTATE
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/projects"
-              className="rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-200 transition hover:border-gold/30 hover:text-gold"
+              className="rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-200 transition hover:border-primary/30 hover:text-primary"
             >
               All Projects
             </Link>
-            <div className="glass-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs uppercase tracking-[0.26em] text-gold">
+            <div className="glass-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs uppercase tracking-[0.26em] text-primary">
               <ShieldCheck size={14} />
               RERA Verified | A51700031228
             </div>
@@ -285,10 +286,10 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
         <div className="grid gap-7 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div className="space-y-5">
             <div className="rounded-[2.25rem] border border-white/8 bg-[linear-gradient(180deg,rgba(16,16,16,0.78),rgba(10,10,10,0.38))] p-6 shadow-panel md:p-7">
-              <p className="text-xs uppercase tracking-[0.34em] text-gold/80">PCMC Real Estate Advisory</p>
+              <p className="text-xs uppercase tracking-[0.34em] text-primary/80">PCMC Real Estate Advisory</p>
               <h1 className="mt-3 max-w-2xl text-4xl leading-[0.92] text-white md:text-[4.6rem]">
                 Clear property decisions
-                <span className="block text-gold">for the PCMC market.</span>
+                <span className="block text-primary">for the PCMC market.</span>
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-7 text-stone-200 md:text-base">
                 Transparent consulting for buying, selling, renting, and legal or property support
@@ -298,14 +299,14 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href="#live-map"
-                  className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold/25"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition hover:bg-primary/25"
                 >
                   Explore PCMC
                   <ArrowRight size={15} />
                 </a>
                 <a
                   href="#concierge"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-sand transition hover:border-gold/30 hover:text-gold"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-accent-light transition hover:border-primary/30 hover:text-primary"
                 >
                   Talk to Advisor
                 </a>
@@ -326,7 +327,7 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
             <div className="grid gap-3 sm:grid-cols-3">
               {proofStats.map((item) => (
                 <div key={item.value} className="glass-panel rounded-[1.8rem] p-4">
-                  <p className="text-xl font-semibold text-gold md:text-2xl">{item.value}</p>
+                  <p className="text-xl font-semibold text-primary md:text-2xl">{item.value}</p>
                   <p className="mt-2 text-xs leading-5 text-stone-300">{item.label}</p>
                 </div>
               ))}
@@ -334,7 +335,7 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
           </div>
 
           <div className="space-y-5">
-            <div className="overflow-hidden rounded-[2.2rem] border border-gold/18 bg-[linear-gradient(180deg,rgba(24,24,24,0.94),rgba(8,8,8,0.98))] shadow-panel">
+            <div className="overflow-hidden rounded-[2.2rem] border border-primary/18 bg-[linear-gradient(180deg,rgba(24,24,24,0.94),rgba(8,8,8,0.98))] shadow-panel">
               <div className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
                 <div className="relative min-h-[240px] overflow-hidden md:min-h-[320px]">
                   <img
@@ -344,11 +345,11 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.88))]" />
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-black/35 px-3 py-2 text-[11px] uppercase tracking-[0.24em] text-gold">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-black/35 px-3 py-2 text-[11px] uppercase tracking-[0.24em] text-primary">
                       <MapPin size={13} />
                       {selectedProperty.area}
                     </div>
-                    <h2 className="mt-3 text-2xl text-sand md:text-3xl">{selectedProperty.title}</h2>
+                    <h2 className="mt-3 text-2xl text-accent-light md:text-3xl">{selectedProperty.title}</h2>
                     <p className="mt-2 text-sm font-semibold text-white md:text-base">
                       {selectedProperty.configuration} - {selectedProperty.price}
                     </p>
@@ -357,29 +358,29 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
 
                 <div className="flex flex-col justify-between p-5 md:p-5">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-gold">Featured Property</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-primary">Featured Property</p>
                     <p className="mt-3 text-sm leading-6 text-stone-300">{selectedProperty.summary}</p>
                   </div>
 
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     <div className="min-w-0 rounded-[1.2rem] border border-white/10 bg-white/5 p-3">
                       <p className="text-[10px] uppercase tracking-[0.24em] text-stone-400">Area</p>
-                      <p className="mt-2 truncate text-sm text-sand">{selectedProperty.area}</p>
+                      <p className="mt-2 truncate text-sm text-accent-light">{selectedProperty.area}</p>
                     </div>
                     <div className="min-w-0 rounded-[1.2rem] border border-white/10 bg-white/5 p-3">
                       <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Config</p>
-                      <p className="mt-2 truncate text-sm text-sand">{selectedProperty.configuration}</p>
+                      <p className="mt-2 truncate text-sm text-accent-light">{selectedProperty.configuration}</p>
                     </div>
                     <div className="min-w-0 rounded-[1.2rem] border border-white/10 bg-white/5 p-3 sm:col-span-2">
                       <p className="text-[10px] uppercase tracking-[0.24em] text-stone-400">Price</p>
-                      <p className="mt-2 truncate text-sm text-sand">{selectedProperty.price}</p>
+                      <p className="mt-2 truncate text-sm text-accent-light">{selectedProperty.price}</p>
                     </div>
                   </div>
 
                   <div className="mt-5 flex flex-wrap gap-3">
                     <Link
                       to={`/projects/${selectedProperty.id}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold/25"
+                      className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition hover:bg-primary/25"
                     >
                       View Details
                       <ArrowRight size={14} />
@@ -391,7 +392,7 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
                           neighborhoods.find((area) => area.name === selectedProperty.area) ?? focusArea
                         )
                       }
-                      className="rounded-full border border-white/12 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-stone-200 transition hover:border-gold/30 hover:text-gold"
+                      className="rounded-full border border-white/12 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-stone-200 transition hover:border-primary/30 hover:text-primary"
                     >
                       Center on map
                     </button>
@@ -400,15 +401,15 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
               </div>
             </div>
 
-            <div className="rounded-[1.7rem] border border-gold/16 bg-[linear-gradient(180deg,rgba(18,18,18,0.88),rgba(8,8,8,0.96))] p-4 shadow-panel">
+            <div className="rounded-[1.7rem] border border-primary/16 bg-[linear-gradient(180deg,rgba(18,18,18,0.88),rgba(8,8,8,0.96))] p-4 shadow-panel">
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold">Guided Discovery</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-primary">Guided Discovery</p>
                   <p className="mt-1 text-sm leading-6 text-stone-300">
                     Use chips to browse locality, configuration, and intent without a bulky search block.
                   </p>
                 </div>
-                <div className="self-start rounded-full border border-gold/18 bg-gold/8 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-gold/90 md:self-auto whitespace-nowrap">
+                <div className="self-start rounded-full border border-primary/18 bg-primary/8 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-primary/90 md:self-auto whitespace-nowrap">
                   Tap chips to update map
                 </div>
               </div>
@@ -422,8 +423,8 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
                       onClick={() => handleConfigurationFilter(item)}
                       className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition ${
                         activeConfigFilter === item
-                          ? "border-gold bg-gold/15 text-gold"
-                          : "border-white/12 bg-white/5 text-stone-300 hover:border-gold/30 hover:text-gold"
+                          ? "border-primary bg-primary/15 text-primary"
+                          : "border-white/12 bg-white/5 text-stone-300 hover:border-primary/30 hover:text-primary"
                       }`}
                     >
                       {item}
@@ -439,8 +440,8 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
                       onClick={() => handleIntentFilter(item)}
                       className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition ${
                         activeIntentFilter === item
-                          ? "border-gold bg-gold/15 text-gold"
-                          : "border-white/12 bg-white/5 text-stone-300 hover:border-gold/30 hover:text-gold"
+                          ? "border-primary bg-primary/15 text-primary"
+                          : "border-white/12 bg-white/5 text-stone-300 hover:border-primary/30 hover:text-primary"
                       }`}
                     >
                       {item}
@@ -451,8 +452,6 @@ export default function MapHero({ focusArea, onAreaSelect }: MapHeroProps) {
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );

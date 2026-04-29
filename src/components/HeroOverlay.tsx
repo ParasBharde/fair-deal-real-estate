@@ -26,7 +26,7 @@ export default function HeroOverlay({
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="glass-panel pointer-events-auto rounded-full px-4 py-2 text-xs tracking-[0.28em] text-gold"
+            className="glass-panel pointer-events-auto rounded-full px-4 py-2 text-xs tracking-[0.28em] text-primary"
           >
             <div className="flex items-center gap-2 uppercase">
               <ShieldCheck size={14} />
@@ -42,14 +42,14 @@ export default function HeroOverlay({
             transition={{ duration: 0.6 }}
             className="max-w-[40rem]"
           >
-            <div className="rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(8,8,8,0.38),rgba(8,8,8,0.16))] p-5 backdrop-blur-[3px] md:p-7">
-              <p className="mb-4 text-xs uppercase tracking-[0.42em] text-gold/90">
+            <div className="rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(var(--color-background),0.38),rgba(var(--color-background),0.16))] p-5 backdrop-blur-[3px] md:p-7">
+              <p className="mb-4 text-xs uppercase tracking-[0.42em] text-primary/90">
                 FAIR DEAL REAL ESTATE
               </p>
               <h1 className="text-4xl leading-[0.9] text-white sm:text-5xl md:text-[4.3rem] xl:text-[4.9rem]">
                 PCMC real estate,
-                <span className="mt-1 block text-gold">with sharper judgment</span>
-                <span className="block text-gold">and cleaner execution.</span>
+                <span className="mt-1 block text-primary">with sharper judgment</span>
+                <span className="block text-primary">and cleaner execution.</span>
               </h1>
               <p className="mt-5 max-w-xl text-sm leading-7 text-stone-200 md:text-base">
                 Transparent, customer-oriented consulting for buying, selling, renting, and ongoing
@@ -71,7 +71,7 @@ export default function HeroOverlay({
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               {highlights.map((item) => (
                 <div key={item.id} className="glass-panel rounded-3xl p-4">
-                  <p className="text-2xl font-semibold text-gold md:text-3xl">{item.value}</p>
+                  <p className="text-2xl font-semibold text-primary md:text-3xl">{item.value}</p>
                   <p className="mt-1 text-xs leading-5 text-stone-300">{item.label}</p>
                 </div>
               ))}
@@ -84,8 +84,8 @@ export default function HeroOverlay({
             transition={{ duration: 0.6, delay: 0.1 }}
             className="glass-panel pointer-events-auto rounded-[2rem] p-5 md:p-6"
           >
-            <p className="text-xs uppercase tracking-[0.28em] text-gold">Search the corridor</p>
-            <p className="mt-3 text-3xl leading-none text-sand md:text-4xl">
+            <p className="text-xs uppercase tracking-[0.28em] text-primary">Search the corridor</p>
+            <p className="mt-3 text-3xl leading-none text-accent-light md:text-4xl">
               Search by locality, configuration, or intent.
             </p>
             <p className="mt-4 text-sm leading-6 text-stone-300">
@@ -103,9 +103,9 @@ export default function HeroOverlay({
               <label className="sr-only" htmlFor="property-search">
                 Search Area, Configuration, or Intent
               </label>
-              <div className="rounded-[1.5rem] border border-gold/20 bg-black/35 p-3">
+              <div className="rounded-[1.5rem] border border-primary/20 bg-black/35 p-3">
                 <div className="flex items-center gap-3 rounded-[1.2rem] border border-white/8 bg-white/5 px-4 py-3">
-                  <Search className="text-gold" size={18} />
+                  <Search className="text-primary" size={18} />
                   <input
                     id="property-search"
                     value={query}
@@ -123,14 +123,14 @@ export default function HeroOverlay({
                         setQuery(chip);
                         onSearch(chip);
                       }}
-                      className="rounded-full border border-gold/20 bg-gold/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold transition hover:bg-gold/20"
+                      className="rounded-full border border-primary/20 bg-primary/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary transition hover:bg-primary/20"
                     >
                       {chip}
                     </button>
                   ))}
                 </div>
                 <div className="mt-4 rounded-[1.1rem] border border-white/8 bg-black/30 px-4 py-3">
-                  <div className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-gold/85">
+                  <div className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-primary/85">
                     <Sparkles size={12} />
                     Active map response
                   </div>
@@ -140,7 +140,7 @@ export default function HeroOverlay({
             </form>
 
             <div className="mt-5 flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-stone-400">
-              <ArrowDown size={14} className="text-gold" />
+              <ArrowDown size={14} className="text-primary" />
               Use `+ / -` controls, drag the map, or `Ctrl + scroll` to zoom
             </div>
           </motion.div>

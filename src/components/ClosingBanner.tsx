@@ -9,15 +9,15 @@ export default function ClosingBanner() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-gold/25 bg-hero-radiance p-8 shadow-panel md:p-10"
+        className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-primary/25 bg-hero-radiance p-8 shadow-panel md:p-10"
       >
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/25 bg-black/35 px-4 py-2 text-xs uppercase tracking-[0.28em] text-gold">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-black/35 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">
               <MapPinHouse size={14} />
               PCMC Local Advantage
             </div>
-            <h2 className="mt-5 text-4xl leading-none text-sand md:text-6xl">
+            <h2 className="mt-5 text-4xl leading-none text-accent-light md:text-6xl">
               Better local judgment. Cleaner execution. Stronger client trust.
             </h2>
             <p className="mt-5 text-sm leading-7 text-stone-200 md:text-base">
@@ -29,7 +29,7 @@ export default function ClosingBanner() {
 
           <a
             href="#concierge"
-            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-black/45 px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold/15"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-black/45 px-6 py-3 text-sm font-semibold uppercase tracking-[0.24em] text-primary transition hover:bg-primary/15"
           >
             Start your brief
             <ArrowRight size={16} />

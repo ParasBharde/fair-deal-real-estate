@@ -15,10 +15,10 @@ export default function PropertyConciergeForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.5 }}
-          className="rounded-[2rem] border border-gold/20 bg-hero-radiance p-7 shadow-panel md:p-8"
+          className="rounded-[2rem] border border-primary/20 bg-hero-radiance p-7 shadow-panel md:p-8"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">Property Concierge</p>
-          <h2 className="mt-4 text-4xl leading-none text-sand md:text-5xl">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary">Property Concierge</p>
+          <h2 className="mt-4 text-4xl leading-none text-accent-light md:text-5xl">
             Brief us once. Get a smarter shortlist back.
           </h2>
           <p className="mt-5 text-sm leading-7 text-stone-200">
@@ -28,7 +28,7 @@ export default function PropertyConciergeForm() {
 
           <div className="mt-8 space-y-4">
             <div className="glass-panel rounded-3xl p-5">
-              <div className="flex items-center gap-3 text-gold">
+              <div className="flex items-center gap-3 text-primary">
                 <ClipboardCheck size={18} />
                 <p className="text-sm font-semibold uppercase tracking-[0.22em]">Clear requirement capture</p>
               </div>
@@ -37,7 +37,7 @@ export default function PropertyConciergeForm() {
               </p>
             </div>
             <div className="glass-panel rounded-3xl p-5">
-              <div className="flex items-center gap-3 text-gold">
+              <div className="flex items-center gap-3 text-primary">
                 <PhoneCall size={18} />
                 <p className="text-sm font-semibold uppercase tracking-[0.22em]">Fast response flow</p>
               </div>
@@ -59,22 +59,22 @@ export default function PropertyConciergeForm() {
             <input
               type="text"
               placeholder="Full Name"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-gold/45 focus:outline-none"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
               required
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-gold/45 focus:outline-none"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
               required
             />
             <input
               type="text"
               placeholder="Preferred Area"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-gold/45 focus:outline-none"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
             />
             <select
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white focus:border-gold/45 focus:outline-none"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white focus:border-primary/45 focus:outline-none"
               defaultValue=""
             >
               <option value="" disabled>
@@ -86,7 +86,7 @@ export default function PropertyConciergeForm() {
               <option value="100-plus">1Cr+</option>
             </select>
             <select
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white focus:border-gold/45 focus:outline-none"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white focus:border-primary/45 focus:outline-none"
               defaultValue=""
             >
               <option value="" disabled>
@@ -100,16 +100,16 @@ export default function PropertyConciergeForm() {
             <input
               type="text"
               placeholder="Preferred Configuration"
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-gold/45 focus:outline-none"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none"
             />
             <textarea
               placeholder="Tell us what matters most: possession timeline, rental yield, school access, legal clarity, low maintenance, or anything else."
               rows={5}
-              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-gold/45 focus:outline-none md:col-span-2"
+              className="rounded-2xl border border-white/10 bg-black/35 px-4 py-4 text-sm text-white placeholder:text-stone-500 focus:border-primary/45 focus:outline-none md:col-span-2"
             />
             <button
               type="submit"
-              className="rounded-2xl border border-gold/45 bg-gold/15 px-5 py-4 text-xs font-semibold uppercase tracking-[0.28em] text-gold transition hover:bg-gold/25 md:col-span-2"
+              className="rounded-2xl border border-primary/45 bg-primary/15 px-5 py-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary transition hover:bg-primary/25 md:col-span-2"
             >
               Request a callback
             </button>
