@@ -38,12 +38,10 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
     const isRight = diff === 1;
     const isVisible = Math.abs(diff) <= 1;
 
-    // Responsive adjustments for Mobile
     const mobileX = isLeft ? "-65%" : isRight ? "65%" : "0%";
-    // Increased desktopX from 78% to 105% to create more space between cards
     const desktopX = isLeft ? "-85%" : isRight ? "85%" : "0%";
     
-    const mobileRotateY = isLeft ? -25 : isRight ? 25 : 0; // Less rotation on mobile
+    const mobileRotateY = isLeft ? -25 : isRight ? 25 : 0; 
     const desktopRotateY = isLeft ? -40 : isRight ? 40 : 0;
 
     return {
@@ -56,7 +54,7 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
         rotateY: isMobile ? mobileRotateY : desktopRotateY,
         skewY: isActive ? 0 : (isLeft ? -1 : 1),
         filter: isActive ? "blur(0px)" : "blur(4px)",
-        pointerEvents: isActive ? "auto" : "none",
+        pointerEvents: (isActive ? "auto" : "none") as "auto" | "none",
       },
       transition: {
         type: "spring",
@@ -82,7 +80,6 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
           </p>
         </div>
 
-        {/* Carousel Window */}
         <div className="relative h-[280px] md:h-[320px] w-full flex items-center justify-center perspective-[1000px] md:perspective-[1500px] transform-gpu">
           <AnimatePresence initial={false}>
             {data.map((item: any, index: number) => {
@@ -123,7 +120,7 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4 md:mb-6">
                       <div className={`grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-full border text-sm md:text-base font-semibold ${
-                        isActive ? "border-ink-deep/20 bg-ink-deep/10 text-ink-deep" : "border-primary/30 bg-primary/10 text-primary"
+                        isActive ? "border-black border-[1.5px] bg-ink-deep/10 text-ink-deep" : "border-primary/30 bg-primary/10 text-primary"
                       }`}>
                         {item.name.split(" ").map((n: string) => n[0]).join("").slice(0,2).toUpperCase()}
                       </div>
@@ -147,7 +144,7 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
           </AnimatePresence>
         </div>
 
-        {/* Navigation Controls */}
+        
         <div className="mt-8 md:mt-10 flex flex-col items-center gap-8">
           <div className="flex items-center gap-4 md:gap-6">
             <button 

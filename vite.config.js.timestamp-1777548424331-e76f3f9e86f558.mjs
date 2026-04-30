@@ -1,0 +1,16 @@
+// vite.config.js
+import { defineConfig } from "file:///D:/Dev/real-estiate/fair-deal-real-estate/node_modules/vite/dist/node/index.js";
+import react from "file:///D:/Dev/real-estiate/fair-deal-real-estate/node_modules/@vitejs/plugin-react/dist/index.js";
+var vite_config_default = defineConfig({
+  server: {
+    host: true,
+    allowedHosts: [
+      "commuting-livable-sedate.ngrok-free.dev"
+    ]
+  },
+  plugins: [react()]
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJEOlxcXFxEZXZcXFxccmVhbC1lc3RpYXRlXFxcXGZhaXItZGVhbC1yZWFsLWVzdGF0ZVwiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9maWxlbmFtZSA9IFwiRDpcXFxcRGV2XFxcXHJlYWwtZXN0aWF0ZVxcXFxmYWlyLWRlYWwtcmVhbC1lc3RhdGVcXFxcdml0ZS5jb25maWcuanNcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfaW1wb3J0X21ldGFfdXJsID0gXCJmaWxlOi8vL0Q6L0Rldi9yZWFsLWVzdGlhdGUvZmFpci1kZWFsLXJlYWwtZXN0YXRlL3ZpdGUuY29uZmlnLmpzXCI7aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcInZpdGVcIjtcbmltcG9ydCByZWFjdCBmcm9tIFwiQHZpdGVqcy9wbHVnaW4tcmVhY3RcIjtcblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgICBcbiAgICBzZXJ2ZXI6IHtcbiAgICAgICAgaG9zdDogdHJ1ZSxcbiAgICAgICAgYWxsb3dlZEhvc3RzOiBbXG4gICAgICAgICAgICBcImNvbW11dGluZy1saXZhYmxlLXNlZGF0ZS5uZ3Jvay1mcmVlLmRldlwiXG4gICAgICAgIF1cbiAgICB9LFxuICAgIHBsdWdpbnM6IFtyZWFjdCgpXVxufSk7XG4iXSwKICAibWFwcGluZ3MiOiAiO0FBQXFULFNBQVMsb0JBQW9CO0FBQ2xWLE9BQU8sV0FBVztBQUVsQixJQUFPLHNCQUFRLGFBQWE7QUFBQSxFQUV4QixRQUFRO0FBQUEsSUFDSixNQUFNO0FBQUEsSUFDTixjQUFjO0FBQUEsTUFDVjtBQUFBLElBQ0o7QUFBQSxFQUNKO0FBQUEsRUFDQSxTQUFTLENBQUMsTUFBTSxDQUFDO0FBQ3JCLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==

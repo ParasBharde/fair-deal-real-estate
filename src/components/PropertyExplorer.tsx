@@ -1,15 +1,13 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
-  ArrowRight,
   ChevronRight,
   SlidersHorizontal,
   TrendingUp,
   Sparkles,
   ExternalLink,
   ShieldCheck,
-
   Layers,
   Maximize,
   Phone,
@@ -42,12 +40,13 @@ function SectionLabel({ icon, text } : {
   );
 }
 
-export default function App() {
+export default function PropertyExplorer() {
   const [activeArea, setActiveArea] = useState("Akurdi");
   const [activeConfig, setActiveConfig] = useState("All");
   const [activePropertyId, setActivePropertyId] = useState(properties[0].id);
   const [isLoading, setIsLoading] = useState(false);
-  const loadingTimeoutRef = React.useRef<NodeJS.Timeout>();
+  const loadingTimeoutRef = React.useRef<any>();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const triggerLoad = (action: () => void) => {
     action();
@@ -151,9 +150,8 @@ export default function App() {
             </div>
           </aside>
 
-          <main className="flex-1 space-y-8">
-            {/* Wrapper to prevent height collapse during wait transition */}
-            <div className="min-h-[520px] relative">
+          <main className="flex-1 space-y-8" ref={scrollRef}>
+            <div className="min-h-[600px] md:min-h-[520px] relative">
               <AnimatePresence mode="wait">
                 {isLoading ? (
                   <motion.div
@@ -162,7 +160,7 @@ export default function App() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute inset-0 flex flex-col items-center justify-center bg-glass border border-glass-border rounded-[2.5rem] shadow-panel backdrop-blur-sm z-10"
+                    className="flex flex-col items-center justify-center bg-glass border border-glass-border rounded-[2.5rem] shadow-panel backdrop-blur-sm z-10 w-full h-full min-h-[600px] md:min-h-[520px]"
                   >
                     <Loader2 className="w-10 h-10 text-primary animate-spin mb-4" />
                     <span className="text-[10px] font-black text-primary tracking-[0.3em] uppercase">Processing Intel</span>
@@ -185,12 +183,12 @@ export default function App() {
                       alt={selectedProperty.title} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t xl:bg-gradient-to-r from-transparent via-transparent to-ink-deep/10" />
-                    <div className="absolute top-6 left-6 flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-ink-deep/20 bg-ink-deep px-4 py-2 text-[10px] font-bold uppercase tracking-[0.28em] text-white shadow-sm">
+                    <div className="absolute top-8 left-8 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-ink-deep/10 bg-white/95 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.28em] text-ink-deep shadow-sm backdrop-blur-md">
                         <Zap size={12} className="text-primary" />
                         {selectedProperty.status}
                       </span>
-                      <span className="inline-flex items-center gap-2 rounded-full border border-ink-deep/20 bg-ink-deep px-4 py-2 text-[10px] font-bold uppercase tracking-[0.28em] text-white shadow-sm">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-ink-deep/10 bg-white/95 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.28em] text-ink-deep shadow-sm backdrop-blur-md">
                         <Tag size={12} className="text-primary" />
                         {selectedProperty.tag}
                       </span>
@@ -209,7 +207,6 @@ export default function App() {
                         </h2>
                       </div>
 
-                      {/* Broker Card */}
                       <div className="flex items-center gap-4 p-4 rounded-2xl bg-ink-deep/5 border-[0.5px] border-[#111827]">
                         <div className="w-10 h-10 rounded-full bg-ink-deep/10 flex items-center justify-center text-ink-deep">
                           <User size={20} />
@@ -219,7 +216,7 @@ export default function App() {
                           <p className="text-sm font-bold text-ink-deep">{selectedProperty.broker}</p>
                         </div>
                         <div className="flex gap-2">
-                          <button className="p-2.5 bg-ink-deep/10 hover:bg-ink-deep/20 text-ink-deep  rounded-xl transition-colors border-1 border-ink-deep/10 shadow-sm">
+                          <button className="p-2.5 bg-ink-deep/10 hover:bg-ink-deep/20 text-ink-deep rounded-xl transition-colors border-[0.5px] border-ink-deep/10 shadow-sm">
                             <Phone size={14} />
                           </button>
                           <button className="p-2.5 bg-primary hover:bg-primary/90 text-white rounded-xl transition-colors shadow-sm">
@@ -246,7 +243,7 @@ export default function App() {
 
                       <div className="flex flex-wrap gap-2">
                         {selectedProperty.features.map((f, i) => (
-                          <div key={i} className="flex items-center gap-2 text-[10px] font-bold text-ink-deep/80 bg-ink-deep/5 px-3 py-1.5 rounded-full border-[0.5px] border-[#111827] shadow-sm">
+                          <div key={i} className="flex items-center gap-2 text-[10px] font-bold text-ink-deep bg-white/95 px-3 py-1.5 rounded-full border border-ink-deep/10 shadow-sm">
                             <ShieldCheck size={12} className="text-primary" />
                             {f}
                           </div>
@@ -285,7 +282,12 @@ export default function App() {
                       transition={{ duration: 0.2 }}
                       key={p.id}
                       onClick={() => {
-                        if (selectedProperty.id !== p.id) triggerLoad(() => setActivePropertyId(p.id));
+                        if (selectedProperty.id !== p.id) {
+                          triggerLoad(() => setActivePropertyId(p.id));
+                          if (window.innerWidth < 1024) {
+                            scrollRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }
+                        }
                       }}
                       className={`
                         p-4 rounded-3xl border cursor-pointer transition-all flex items-center gap-4

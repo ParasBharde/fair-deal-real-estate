@@ -1,4 +1,3 @@
-import type { Feature, FeatureCollection, Point } from "geojson";
 import type {
   Highlight,
   Neighborhood,
@@ -9,8 +8,6 @@ import type {
   SupportService,
   Testimonial
 } from "../types";
-
-export const pcmcCenter: [number, number] = [73.7908, 18.6279];
 
 export const highlights: Highlight[] = [
   { id: "repeat", value: "23+", label: "repeat and referral-led relationships" },
@@ -396,22 +393,6 @@ export const testimonials: Testimonial[] = [
       "What stood out was end-to-end coordination. Legal, negotiation, and post-deal support came from one place."
   }
 ];
-
-export const propertyGeoJson: FeatureCollection<Point, { propertyId: string }> = {
-  type: "FeatureCollection",
-  features: properties
-    .filter((p): p is Property & { coordinates: [number, number] } => !!p.coordinates)
-    .map(
-      (property): Feature<Point, { propertyId: string }> => ({
-        type: "Feature",
-        properties: { propertyId: property.id },
-        geometry: {
-          type: "Point",
-          coordinates: property.coordinates
-        }
-      })
-    )
-};
 
 export const getPropertyById = (id: string) => properties.find((property) => property.id === id);
 

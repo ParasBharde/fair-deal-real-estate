@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   ArrowRight,
   ShieldCheck,
-  Building2,
   ChevronRight,
-  Sparkles,
-  Search,
   Users,
   BarChart3,
   TrendingUp,
@@ -44,7 +41,7 @@ const proofStats = [
   }
 ];
 
-export default function App() {
+export default function MapHero() {
   const [activeImg, setActiveImg] = useState(0);
 
   useEffect(() => {
@@ -57,11 +54,9 @@ export default function App() {
   return (
     <div className="min-h-screen w-full section-shell bg-section-glow font-sans selection:bg-primary/30 flex flex-col">
       <section className="relative flex-1 w-full overflow-hidden flex flex-col">
-        {/* Background Decorative Elements */}
         <div className="absolute -left-20 -top-20 h-[50vw] w-[50vw] max-h-[500px] max-w-[500px] rounded-full bg-primary/10 blur-[140px] opacity-50 pointer-events-none" />
         <div className="absolute right-[-10%] top-[-10%] h-[60vw] w-[60vw] max-h-[600px] max-w-[600px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
         
-        {/* Grid Pattern */}
         <div 
           className="absolute inset-0 opacity-[0.08] pointer-events-none" 
           style={{ 
@@ -73,7 +68,6 @@ export default function App() {
 
         <div className="relative flex-1 mx-auto max-w-[1400px] w-full px-6 md:px-12 flex flex-col pt-24 pb-12 md:pt-32 md:pb-16">
           
-          {/* Header Area - Enlarged Logo and RERA Badge */}
           <div className="absolute top-6 left-6 right-6 md:top-10 md:left-12 md:right-12 flex items-center justify-between z-50">
             <div className="flex flex-col gap-1">
               <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.4em] sm:tracking-[0.6em] text-primary ml-1">
@@ -105,7 +99,6 @@ export default function App() {
                 across Akurdi, Nigdi, Ravet, Kiwale, and Wakad.
               </p>
 
-              {/* Action Suite */}
               <div className="mt-6 flex flex-wrap items-center gap-3 md:gap-4">
                 <button 
                   onClick={() => document.getElementById('market-pulse')?.scrollIntoView({ behavior: 'smooth' })}
@@ -126,7 +119,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Stats Cards Section */}
             <div className="grid gap-3 sm:grid-cols-3">
               {proofStats.map((item, idx) => {
                 const isNavy = idx % 2 == 0;
@@ -145,12 +137,9 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right Column: Smaller Visual Showcase */}
           <div className="relative w-full flex items-center justify-center py-4 lg:py-0">
-            {/* Image Card Made Smaller with max-w-[320px] constraint */}
             <div className="relative aspect-[4/5] w-full max-w-[320px] sm:max-w-[320px] lg:max-w-[500px] overflow-hidden rounded-[2rem] md:rounded-[2.5rem] border border-glass-border bg-glass shadow-panel">
               
-              {/* Seamless Background Carousel */}
               <div className="absolute inset-0">
                 {showcaseImages.map((img, idx) => (
                   <div 
@@ -167,12 +156,10 @@ export default function App() {
                     }}
                   />
                 ))}
-                {/* Removed background image overlay that caused ghosting */}
               </div>
               
               <div className="absolute inset-0 bg-gradient-to-tr from-navy/30 via-transparent to-transparent z-20 pointer-events-none" />
               
-              {/* Floating "Insight" Panels */}
               <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-between z-30">
                 <div className="flex justify-end">
                   <div className="rounded-xl border border-white/10 bg-ink p-2 lg:p-3 shadow-2xl">
@@ -194,7 +181,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Market Growth Card - Scaled down slightly */}
             <div className="absolute top-2 left-10 sm:-top-2 sm:left-10 w-25 sm:w-30 rounded-xl bg-ink border border-white/10 p-2.5 sm:p-3.5 shadow-2xl z-40">
               <div className="flex items-center justify-between mb-1.5">
                 <div className="p-1 rounded-lg bg-primary/10">
@@ -212,7 +198,6 @@ export default function App() {
               </svg>
             </div>
 
-            {/* Status Indicator */}
             
           </div>
         </div>

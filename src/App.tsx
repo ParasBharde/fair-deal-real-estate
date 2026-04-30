@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
-import PropertyDetailPage from "./pages/PropertyDetailPage";
 
 function ScrollToTop() {
   const { hash, pathname } = useLocation();
@@ -28,8 +26,6 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/projects/:propertyId" element={<PropertyDetailPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
