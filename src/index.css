@@ -5,31 +5,32 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   
   /* Centralized Color Tokens (RGB Triplets) */
   --color-primary: 212, 175, 55;    /* Gold: #D4AF37 */
-  --color-background: 5, 5, 5;      /* Midnight: #050505 */
-  --color-surface: 26, 26, 26;       /* Charcoal: #1A1A1A */
-  --color-accent-light: 246, 237, 210; /* Sand: #F6EDD2 */
+  --color-background: 255, 248, 231; /* Warm Cream: #FFF8E7 */
+  --color-surface: 253, 249, 242;    /* Slightly different cream for surface */
+  --color-accent-light: 243, 244, 246; /* Gray 100: #F3F4F6 */
   --color-bronze: 143, 107, 34;      /* Bronze: #8F6B22 */
-  --color-ink: 12, 12, 12;           /* Ink: #0C0C0C */
+  --color-ink: 248, 232, 232;           /* Soft Blush Pink: #F8E8E8 */
+  --color-ink-deep: 17, 24, 39;        /* Keep dark text for contrast */
   
   /* Additional Accents */
-  --color-accent-gold: 255, 247, 223;
+  --color-accent-gold: 153, 117, 10;    /* Darker Gold for text contrast */
   --color-accent-sand: 248, 243, 222;
-  --color-muted-gold: 202, 191, 152;
+  --color-muted-gold: 162, 145, 87;
   
-  /* Midnight Variants */
-  --color-midnight-8: 8, 8, 8;
-  --color-midnight-10: 10, 10, 10;
-  --color-midnight-14: 14, 14, 14;
-  --color-midnight-16: 16, 16, 16;
-  --color-midnight-18: 18, 18, 18;
-  --color-midnight-20: 20, 20, 20;
-  --color-midnight-24: 24, 24, 24;
-  --color-midnight-28: 28, 28, 28;
-  --color-midnight-30: 30, 30, 30;
+  /* Navy Variants (replacing Midnight) */
+  --color-midnight-8: 0, 24, 51;
+  --color-midnight-10: 0, 33, 71;
+  --color-midnight-14: 0, 42, 89;
+  --color-midnight-16: 0, 51, 107;
+  --color-midnight-18: 0, 60, 125;
+  --color-midnight-20: 0, 68, 143;
+  --color-midnight-24: 0, 77, 161;
+  --color-midnight-28: 0, 86, 179;
+  --color-midnight-30: 0, 94, 196;
   
   /* Additional UI Tokens */
   --color-white: 255, 255, 255;
@@ -43,24 +44,24 @@
 
   /* Semantic Mappings */
   --bg: rgb(var(--color-background));
-  --text: rgb(var(--color-accent-light));
-  --panel: rgba(var(--color-surface), 0.78);
-  --panel-strong: rgba(var(--color-surface), 0.92);
-  --line: rgba(var(--color-primary), 0.22);
-  --muted: rgb(var(--color-muted-gold));
+  --text: rgb(var(--color-ink-deep));
+  --panel: rgba(var(--color-white), 0.9);
+  --panel-strong: rgba(var(--color-white), 0.98);
+  --line: rgba(var(--color-primary), 0.4);
+  --muted: rgb(var(--color-stone-600));
   
   /* Text Semantic Mappings */
-  --text-heading: rgb(var(--color-white));
-  --text-body: rgb(var(--color-accent-light));
-  --text-muted: rgb(var(--color-stone-300));
-  --text-muted-more: rgb(var(--color-stone-400));
-  --text-muted-less: rgb(var(--color-stone-200));
+  --text-heading: rgb(var(--color-ink-deep));
+  --text-body: rgba(var(--color-ink-deep), 0.9);
+  --text-muted: rgba(var(--color-ink-deep), 0.65);
+  --text-muted-more: rgba(var(--color-ink-deep), 0.6);
+  --text-muted-less: rgba(var(--color-ink-deep), 0.8);
   
   /* Glass Effects */
-  --glass-bg: rgba(var(--color-white), 0.05);
-  --glass-bg-strong: rgba(var(--color-white), 0.1);
-  --glass-border: rgba(var(--color-white), 0.12);
-  --glass-border-light: rgba(var(--color-white), 0.08);
+  --glass-bg: rgba(var(--color-white), 0.82);
+  --glass-bg-strong: rgba(var(--color-white), 0.95);
+  --glass-border: rgba(var(--color-ink-deep), 0.12);
+  --glass-border-light: rgba(var(--color-ink-deep), 0.08);
 }
 
 * {
@@ -82,9 +83,9 @@ body {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 12% 12%, rgba(var(--color-primary), 0.08), transparent 22%),
-    radial-gradient(circle at 88% 2%, rgba(var(--color-primary), 0.06), transparent 16%),
-    linear-gradient(180deg, rgb(var(--color-midnight-8)) 0%, rgb(var(--color-black)) 100%);
+    radial-gradient(circle at 12% 12%, rgba(var(--color-primary), 0.05), transparent 25%),
+    radial-gradient(circle at 88% 2%, rgba(var(--color-primary), 0.03), transparent 20%),
+    linear-gradient(180deg, #FFF8E7 0%, #FDF9F2 100%);
   color: var(--text);
   overflow-x: hidden;
 }
@@ -111,16 +112,16 @@ h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 10% 0%, rgba(var(--color-primary), 0.08), transparent 25%),
-    linear-gradient(180deg, rgba(var(--color-white), 0.02), transparent 35%);
+    radial-gradient(circle at 10% 0%, rgba(var(--color-primary), 0.04), transparent 30%),
+    linear-gradient(180deg, rgba(var(--color-primary), 0.02), transparent 40%);
   pointer-events: none;
 }
 
 .glass-panel {
-  background: linear-gradient(180deg, rgba(var(--color-midnight-30), 0.72), rgba(var(--color-midnight-14), 0.9));
-  border: 1px solid rgba(var(--color-primary), 0.18);
-  box-shadow: 0 18px 50px rgba(var(--color-black), 0.38);
-  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(var(--color-white), 0.8), rgba(var(--color-accent-light), 0.9));
+  border: 1px solid rgba(var(--color-primary), 0.24);
+  box-shadow: 0 18px 50px rgba(var(--color-ink-deep), 0.08);
+  backdrop-filter: blur(20px);
 }
 
 .gold-grid {

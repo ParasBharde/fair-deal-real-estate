@@ -18,7 +18,7 @@ export default function PropertyConciergeForm() {
           className="rounded-[2rem] border border-primary/20 bg-hero-radiance p-7 shadow-panel md:p-8"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-primary">Property Concierge</p>
-          <h2 className="mt-4 text-4xl leading-none text-accent-light md:text-5xl">
+          <h2 className="mt-4 text-4xl leading-none text-heading md:text-5xl">
             Brief us once. Get a smarter shortlist back.
           </h2>
           <p className="mt-5 text-sm leading-7 text-muted-text-less">
@@ -53,63 +53,63 @@ export default function PropertyConciergeForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="glass-panel rounded-[2rem] p-6 md:p-8"
+          className="rounded-[2rem] border border-primary/20 bg-ink p-6 shadow-panel md:p-8"
         >
           <form onSubmit={handleSubmit} className="grid gap-4 md:grid-cols-2">
             <input
               type="text"
               placeholder="Full Name"
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep placeholder:text-ink-deep/40 focus:border-primary/45 focus:outline-none"
               required
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep placeholder:text-ink-deep/40 focus:border-primary/45 focus:outline-none"
               required
             />
             <input
               type="text"
               placeholder="Preferred Area"
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep placeholder:text-ink-deep/40 focus:border-primary/45 focus:outline-none"
             />
             <select
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep focus:border-primary/45 focus:outline-none"
               defaultValue=""
             >
-              <option value="" disabled>
+              <option value="" disabled className="text-ink-deep">
                 Budget Range
               </option>
-              <option value="rental">Rental Requirement</option>
-              <option value="50-75">50L - 75L</option>
-              <option value="75-100">75L - 1Cr</option>
-              <option value="100-plus">1Cr+</option>
+              <option value="rental" className="text-ink-deep">Rental Requirement</option>
+              <option value="50-75" className="text-ink-deep">50L - 75L</option>
+              <option value="75-100" className="text-ink-deep">75L - 1Cr</option>
+              <option value="100-plus" className="text-ink-deep">1Cr+</option>
             </select>
             <select
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep focus:border-primary/45 focus:outline-none"
               defaultValue=""
             >
-              <option value="" disabled>
+              <option value="" disabled className="text-ink-deep">
                 Purpose
               </option>
-              <option value="buy">Buy</option>
-              <option value="sell">Sell</option>
-              <option value="rent">Rent</option>
-              <option value="manage">Maintenance Support</option>
+              <option value="buy" className="text-ink-deep">Buy</option>
+              <option value="sell" className="text-ink-deep">Sell</option>
+              <option value="rent" className="text-ink-deep">Rent</option>
+              <option value="manage" className="text-ink-deep">Maintenance Support</option>
             </select>
             <input
               type="text"
               placeholder="Preferred Configuration"
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep placeholder:text-ink-deep/40 focus:border-primary/45 focus:outline-none"
             />
             <textarea
               placeholder="Tell us what matters most: possession timeline, rental yield, school access, legal clarity, low maintenance, or anything else."
               rows={5}
-              className="rounded-2xl border border-glass-border bg-dark-panel px-4 py-4 text-sm text-heading placeholder:text-muted-text-more focus:border-primary/45 focus:outline-none md:col-span-2"
+              className="rounded-2xl border border-ink-deep/10 bg-ink-deep/5 px-4 py-4 text-sm text-ink-deep placeholder:text-ink-deep/40 focus:border-primary/45 focus:outline-none md:col-span-2"
             />
             <button
               type="submit"
-              className="rounded-2xl border border-primary/45 bg-primary/15 px-5 py-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary transition hover:bg-primary/25 md:col-span-2"
+              className="rounded-2xl border border-primary/45 bg-primary/20 px-5 py-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary transition hover:bg-primary/30 md:col-span-2"
             >
               Request a callback
             </button>

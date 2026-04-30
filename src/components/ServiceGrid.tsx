@@ -20,7 +20,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-primary">Consulting Stack</p>
-            <h2 className="mt-3 text-4xl leading-none text-accent-light md:text-6xl">End-to-end real estate services.</h2>
+            <h2 className="mt-3 text-4xl leading-none text-heading md:text-6xl">End-to-end real estate services.</h2>
           </div>
           <p className="max-w-xl text-sm leading-7 text-muted-text">
             Structured to feel premium but practical: legal depth, transactional control, rental
@@ -38,8 +38,9 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
           }}
           className="mt-10 grid gap-5 md:grid-cols-2"
         >
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = iconMap[service.icon];
+            const isNavy = index === 0 || index === services.length - 1;
             return (
               <motion.article
                 key={service.id}
@@ -47,16 +48,28 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                   hidden: { opacity: 0, y: 18 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.45 } }
                 }}
-                className="group relative overflow-hidden rounded-[2rem] border border-primary/18 bg-[linear-gradient(180deg,rgba(var(--color-surface),0.86),rgba(var(--color-background),0.96))] p-6 shadow-panel"
+                className={`group relative overflow-hidden rounded-[2rem] border p-6 shadow-panel ${
+                  isNavy
+                    ? "border-primary/25 bg-ink"
+                    : "border-primary/10 bg-[linear-gradient(180deg,rgba(var(--color-surface),0.86),rgba(var(--color-background),0.96))]"
+                }`}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(var(--color-primary),0.12),transparent_28%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className={`absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 ${
+                  isNavy 
+                    ? "bg-[radial-gradient(circle_at_top_right,rgba(var(--color-primary),0.08),transparent_40%)]" 
+                    : "bg-[radial-gradient(circle_at_top_right,rgba(var(--color-primary),0.12),transparent_28%)]"
+                }`} />
                 <div className="relative flex items-start gap-4">
-                  <span className="rounded-2xl border border-primary/20 bg-primary/10 p-3 text-primary">
+                  <span className={`rounded-2xl border p-3 ${
+                    isNavy 
+                      ? "border-primary/30 bg-primary/20 text-primary" 
+                      : "border-primary/20 bg-primary/10 text-primary"
+                  }`}>
                     <Icon size={20} />
                   </span>
                   <div>
-                    <h3 className="text-3xl leading-none text-accent-light">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-muted-text">{service.description}</p>
+                    <h3 className={`text-3xl leading-none ${isNavy ? "text-ink-deep" : "text-heading"}`}>{service.title}</h3>
+                    <p className={`mt-3 text-sm leading-7 ${isNavy ? "text-ink-deep/70" : "text-muted-text"}`}>{service.description}</p>
                   </div>
                 </div>
               </motion.article>

@@ -5,5 +5,6 @@ export const themeColors = {
   surface: "rgb(var(--color-surface))",
   accentLight: "rgb(var(--color-accent-light))",
   bronze: "rgb(var(--color-bronze))",
-  ink: "rgb(var(--color-ink))"
+  ink: "rgb(var(--color-ink))",
+  inkDeep: "rgb(var(--color-ink-deep))"
 };

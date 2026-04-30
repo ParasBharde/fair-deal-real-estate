@@ -85,7 +85,7 @@ export default function HeroOverlay({
             className="glass-panel pointer-events-auto rounded-[2rem] p-5 md:p-6"
           >
             <p className="text-xs uppercase tracking-[0.28em] text-primary">Search the corridor</p>
-            <p className="mt-3 text-3xl leading-none text-accent-light md:text-4xl">
+            <p className="mt-3 text-3xl leading-none text-heading md:text-4xl">
               Search by locality, configuration, or intent.
             </p>
             <p className="mt-4 text-sm leading-6 text-muted-text">

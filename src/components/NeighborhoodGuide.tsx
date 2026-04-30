@@ -23,7 +23,7 @@ export default function NeighborhoodGuide({
             </span>
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Map-driven local picks</p>
-              <h2 className="mt-1 text-3xl text-accent-light md:text-5xl">PCMC Neighborhood Guide</h2>
+              <h2 className="mt-1 text-3xl text-heading md:text-5xl">PCMC Neighborhood Guide</h2>
               <p className="mt-2 max-w-2xl text-sm font-medium leading-6 text-muted-text-more">
                 Tap any area to reposition the hero map and inspect the active micro-market with a
                 cleaner, more deliberate browsing flow.
@@ -48,8 +48,8 @@ export default function NeighborhoodGuide({
               onClick={() => onSelectArea(area)}
               className={`group min-w-[260px] snap-start rounded-[1.7rem] border p-5 text-left transition duration-300 xl:min-w-0 ${
                 activeAreaId === area.id
-                  ? "border-primary bg-[radial-gradient(circle_at_top_left,rgba(var(--color-primary),0.16),rgba(var(--color-midnight-28),0.2)_55%),linear-gradient(180deg,rgba(var(--color-midnight-28),0.96),rgba(var(--color-midnight-10),0.98))] text-primary shadow-primary"
-                  : "border-glass-border-light bg-[linear-gradient(180deg,rgba(var(--color-midnight-20),0.82),rgba(var(--color-midnight-8),0.96))] text-muted-text-less hover:border-primary/30 hover:-translate-y-1"
+                  ? "border-primary bg-ink text-ink-deep shadow-primary"
+                  : "border-glass-border-light bg-glass text-muted-text hover:border-primary/30 hover:-translate-y-1"
               }`}
             >
               <div className="flex items-start justify-between">
@@ -62,7 +62,7 @@ export default function NeighborhoodGuide({
                 />
               </div>
               <p className="mt-5 text-[11px] uppercase tracking-[0.28em] text-primary/90">{area.tagline}</p>
-              <p className="mt-3 text-3xl leading-none text-accent-light">{area.name}</p>
+              <p className="mt-3 text-3xl leading-none text-heading">{area.name}</p>
               <p className="mt-4 text-sm leading-6 text-muted-text">{area.snapshot}</p>
               <div className="mt-6 inline-flex rounded-full border border-primary/15 bg-dark-panel px-3 py-2 text-[10px] uppercase tracking-[0.26em] text-muted-text-more">
                 Tap to focus map

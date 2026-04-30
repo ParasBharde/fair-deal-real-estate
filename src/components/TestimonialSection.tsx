@@ -4,7 +4,7 @@ import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 
 
-const TestimonialCarousel = ({ testimonials = [] }) => {
+const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -67,20 +67,16 @@ const TestimonialCarousel = ({ testimonials = [] }) => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#0a0a0a] px-4 py-10 md:py-14 md:px-10 font-sans select-none">
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-blue-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
-      
-      <div className="mx-auto max-w-7xl relative z-10">
-        <div className="flex flex-col gap-4 md:gap-6 md:flex-row md:items-end md:justify-between mb-8 md:mb-12">
-          <div className="max-w-2xl">
-            <p className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-blue-500 font-bold mb-2 md:mb-4">Testimonials</p>
-            <h2 className="text-3xl leading-tight text-white md:text-6xl font-medium">
-              Written trust beats <br />
-              <span className="text-gray-500">polished claims.</span>
+    <section className="section-shell bg-section-glow px-4 py-16 md:px-10 overflow-hidden select-none">
+      <div className="mx-auto max-w-6xl relative z-10">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-8 md:mb-12">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary">Testimonials</p>
+            <h2 className="mt-3 text-4xl leading-none text-heading md:text-6xl">
+              Written trust beats polished claims.
             </h2>
           </div>
-          <p className="max-w-md text-xs md:text-sm leading-relaxed text-gray-400">
+          <p className="max-w-md text-sm leading-relaxed text-muted-text-less">
             Real stories from real partners. We prioritize human connection and 
             demonstrable results over marketing buzzwords.
           </p>
@@ -89,15 +85,19 @@ const TestimonialCarousel = ({ testimonials = [] }) => {
         {/* Carousel Window */}
         <div className="relative h-[280px] md:h-[320px] w-full flex items-center justify-center perspective-[1000px] md:perspective-[1500px] transform-gpu">
           <AnimatePresence initial={false}>
-            {data.map((item: Testimonial, index: number) => {
+            {data.map((item: any, index: number) => {
               const style = getCardStyle(index);
+              const total = data.length;
+              let diff = index - currentIndex;
+              if (diff > total / 2) diff -= total;
+              if (diff < -total / 2) diff += total;
+              const isActive = diff === 0;
               
               return (
                 <motion.article
                   key={item.id}
                   style={{
                     zIndex: style.zIndex,
-                    boxShadow: index === currentIndex ? "0 25px 80px -15px rgba(59, 130, 246, 0.35)" : "none",
                     position: "absolute",
                     transformStyle: "preserve-3d",
                     width: isMobile ? "85vw" : "320px"
@@ -112,26 +112,32 @@ const TestimonialCarousel = ({ testimonials = [] }) => {
                     if (info.offset.x < -threshold) handleNext();
                     if (info.offset.x > threshold) handlePrev();
                   }}
-                  className="p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 bg-[#151515] shadow-2xl overflow-hidden"
+                  className={`p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border shadow-panel overflow-hidden cursor-grab active:cursor-grabbing ${
+                    isActive
+                      ? "bg-ink border-ink text-ink-deep shadow-xl"
+                      : "glass-panel border-glass-border bg-glass"
+                  }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                   
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4 md:mb-6">
-                      <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-blue-500/40 bg-blue-500/20 text-sm md:text-base font-bold text-blue-400">
-                        {item.name.split(" ").map(n => n[0]).join("").toUpperCase()}
+                      <div className={`grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-full border text-sm md:text-base font-semibold ${
+                        isActive ? "border-ink-deep/20 bg-ink-deep/10 text-ink-deep" : "border-primary/30 bg-primary/10 text-primary"
+                      }`}>
+                        {item.name.split(" ").map((n: string) => n[0]).join("").slice(0,2).toUpperCase()}
                       </div>
-                      <Quote className="text-blue-500/40 rotate-180" size={isMobile ? 20 : 28} />
+                      <Quote className={`${isActive ? "text-ink-deep/30" : "text-primary/70"} rotate-180`} size={isMobile ? 20 : 28} />
                     </div>
 
-                    <p className="text-sm md:text-base leading-relaxed text-gray-100 font-light italic">
+                    <p className={`text-sm md:text-base leading-relaxed font-light italic ${isActive ? "text-ink-deep/90" : "text-muted-text-less"}`}>
                       "{item.quote}"
                     </p>
 
-                    <div className="mt-6 md:mt-8 pt-4 border-t border-white/5">
-                      <p className="text-sm md:text-base font-bold text-white tracking-tight">{item.name}</p>
-                      <p className="text-[10px] md:text-xs text-gray-500 mt-1 uppercase tracking-widest font-semibold">
-                        {item.role} <span className="mx-1 md:mx-2 text-blue-500/50">•</span> {item.area}
+                    <div className={`mt-6 md:mt-8 pt-4 border-t ${isActive ? "border-ink-deep/10" : "border-primary/15"}`}>
+                      <p className={`text-sm md:text-base font-bold tracking-tight ${isActive ? "text-ink-deep" : "text-heading"}`}>{item.name}</p>
+                      <p className={`text-[10px] md:text-xs mt-1 uppercase tracking-widest font-semibold ${isActive ? "text-ink-deep/60" : "text-muted-text-more"}`}>
+                        {item.role} <span className={`mx-1 md:mx-2 ${isActive ? "text-ink-deep/30" : "text-primary/50"}`}>•</span> {item.area}
                       </p>
                     </div>
                   </div>
@@ -146,25 +152,25 @@ const TestimonialCarousel = ({ testimonials = [] }) => {
           <div className="flex items-center gap-4 md:gap-6">
             <button 
               onClick={handlePrev}
-              className="group flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-blue-600 active:scale-90"
+              className="group flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-all hover:bg-primary/20 hover:text-primary active:scale-90"
               aria-label="Previous"
             >
               <ChevronLeft size={isMobile ? 18 : 20} />
             </button>
             
-            <div className="flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-white/5 border border-white/5">
+            <div className="flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-glass border border-glass-border">
               {data.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
-                  className={`h-1.5 md:h-2 transition-all duration-300 rounded-full ${currentIndex === i ? 'w-6 md:w-8 bg-blue-500' : 'w-1.5 md:w-2 bg-white/20'}`}
+                  className={`h-1.5 md:h-2 transition-all duration-300 rounded-full ${currentIndex === i ? 'w-6 md:w-8 bg-primary' : 'w-1.5 md:w-2 bg-primary/30'}`}
                 />
               ))}
             </div>
 
             <button 
               onClick={handleNext}
-              className="group flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all hover:bg-blue-600 active:scale-90"
+              className="group flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-all hover:bg-primary/20 hover:text-primary active:scale-90"
               aria-label="Next"
             >
               <ChevronRight size={isMobile ? 18 : 20} />

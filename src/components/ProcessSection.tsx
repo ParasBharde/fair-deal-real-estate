@@ -17,10 +17,12 @@ export default function ProcessSection({ processSteps, supportServices }: Proces
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="glass-panel rounded-[2rem] p-6 md:p-8"
+            className="relative overflow-hidden rounded-[2rem] border border-primary/25 bg-ink p-6 shadow-panel md:p-8"
           >
+            <div className="primary-grid absolute inset-0 opacity-40" />
+            <div className="relative">
             <p className="text-xs uppercase tracking-[0.3em] text-primary">One Stop Flow</p>
-            <h2 className="mt-4 text-4xl leading-none text-accent-light md:text-5xl">
+            <h2 className="mt-4 text-4xl leading-none text-ink-deep md:text-5xl">
               From first brief to post-deal support.
             </h2>
             <div className="mt-8 grid gap-5">
@@ -32,10 +34,11 @@ export default function ProcessSection({ processSteps, supportServices }: Proces
                     </span>
                     <ArrowUpRight size={16} className="text-primary" />
                   </div>
-                  <h3 className="mt-2 text-2xl text-accent-light">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-text">{step.detail}</p>
+                  <h3 className="mt-2 text-2xl text-ink-deep">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-ink-deep/70">{step.detail}</p>
                 </div>
               ))}
+            </div>
             </div>
           </motion.div>
 
@@ -44,15 +47,15 @@ export default function ProcessSection({ processSteps, supportServices }: Proces
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-[linear-gradient(180deg,rgba(var(--color-primary),0.08),rgba(var(--color-midnight-8),0.95))] p-6 shadow-panel md:p-8"
+            className="glass-panel rounded-[2rem] p-6 md:p-8"
           >
-            <div className="primary-grid absolute inset-0 opacity-50" />
+
             <div className="relative">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-dark-panel px-4 py-2 text-xs uppercase tracking-[0.26em] text-primary">
                 <Wrench size={14} />
                 Value Add Services
               </div>
-              <h3 className="mt-5 text-4xl leading-none text-accent-light md:text-5xl">
+              <h3 className="mt-5 text-4xl leading-none text-heading md:text-5xl">
                 Practical support after the paperwork.
               </h3>
               <p className="mt-4 max-w-xl text-sm leading-7 text-muted-text">
@@ -65,7 +68,7 @@ export default function ProcessSection({ processSteps, supportServices }: Proces
                     key={item.id}
                     className="rounded-3xl border border-primary/20 bg-dark-panel p-5 backdrop-blur-md"
                   >
-                    <h4 className="text-2xl text-accent-light">{item.title}</h4>
+                    <h4 className="text-2xl text-heading">{item.title}</h4>
                     <p className="mt-2 text-sm leading-6 text-muted-text">{item.detail}</p>
                   </div>
                 ))}

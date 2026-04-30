@@ -10,12 +10,16 @@ export default {
         "accent-light": "rgba(var(--color-accent-light), <alpha-value>)",
         bronze: "rgba(var(--color-bronze), <alpha-value>)",
         ink: "rgba(var(--color-ink), <alpha-value>)",
+        "ink-deep": "rgba(var(--color-ink-deep), <alpha-value>)",
+        "accent-gold": "rgba(var(--color-accent-gold), <alpha-value>)",
         muted: "var(--muted)",
         glass: "var(--glass-bg)",
         "glass-strong": "var(--glass-bg-strong)",
         "glass-border": "var(--glass-border)",
-        "dark-panel": "rgba(var(--color-black), 0.35)",
-        "dark-panel-strong": "rgba(var(--color-black), 0.45)",
+        pink: "rgba(var(--color-ink), <alpha-value>)",
+        "dark-panel": "rgba(var(--color-ink-deep), 0.04)",
+        "dark-panel-strong": "rgba(var(--color-ink-deep), 0.08)",
+        "navy": "rgba(var(--color-ink), <alpha-value>)",
         white: "rgba(var(--color-white), <alpha-value>)",
         black: "rgba(var(--color-black), <alpha-value>)",
         "stone-200": "rgba(var(--color-stone-200), <alpha-value>)",
@@ -31,16 +35,16 @@ export default {
         "muted-text-less": "var(--text-muted-less)"
       },
       boxShadow: {
-        primary: "0 10px 30px rgba(var(--color-primary), 0.25)",
-        glass: "0 10px 35px rgba(var(--color-black), 0.45)",
-        panel: "0 24px 80px rgba(var(--color-black), 0.55)"
+        primary: "0 10px 30px rgba(var(--color-primary), 0.2)",
+        glass: "0 10px 35px rgba(var(--color-ink-deep), 0.06)",
+        panel: "0 24px 80px rgba(var(--color-ink-deep), 0.1)"
       },
       backgroundImage: {
-        "midnight-fade": "radial-gradient(circle at 20% 20%, rgba(var(--color-primary), 0.12), rgba(var(--color-background), 0.95) 60%)",
+        "premium-fade": "radial-gradient(circle at 20% 20%, rgba(var(--color-primary), 0.08), rgba(var(--color-background), 1) 70%)",
         "hero-radiance":
-          "radial-gradient(circle at top left, rgba(var(--color-primary), 0.25), transparent 32%), radial-gradient(circle at 80% 15%, rgba(var(--color-white), 0.07), transparent 20%), linear-gradient(135deg, rgba(var(--color-background), 0.94), rgba(var(--color-ink), 0.82))",
+          "radial-gradient(circle at top left, rgba(var(--color-primary), 0.15), transparent 40%), radial-gradient(circle at 80% 15%, rgba(var(--color-ink), 0.03), transparent 25%), linear-gradient(135deg, rgba(var(--color-background), 0.98), rgba(var(--color-accent-light), 0.92))",
         "section-glow":
-          "radial-gradient(circle at 15% 10%, rgba(var(--color-primary), 0.18), transparent 24%), radial-gradient(circle at 85% 0%, rgba(var(--color-bronze), 0.14), transparent 22%), linear-gradient(180deg, rgba(var(--color-ink), 0.98), rgba(var(--color-background), 1))"
+          "radial-gradient(circle at 15% 10%, rgba(var(--color-primary), 0.08), transparent 30%), radial-gradient(circle at 85% 0%, rgba(var(--color-primary), 0.05), transparent 25%), linear-gradient(180deg, rgba(var(--color-background), 1), rgba(var(--color-surface), 1))"
       }
     }
   },

@@ -50,7 +50,7 @@ export default function ProjectsPage() {
           <p className="text-xs uppercase tracking-[0.34em] text-primary/85">Project Directory</p>
           <div className="mt-4 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <h1 className="text-5xl leading-[0.92] text-accent-light md:text-7xl">All Projects</h1>
+              <h1 className="text-5xl leading-[0.92] text-heading md:text-7xl">All Projects</h1>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-text md:text-base">
                 Browse the current FAIR DEAL REAL ESTATE listing set across Akurdi, Nigdi, Ravet,
                 Kiwale, and Wakad. This page is built for cleaner comparison than the hero map.
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
             </div>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 rounded-full border border-glass-border bg-glass px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-accent-light transition hover:border-primary/30 hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-full border border-glass-border bg-glass px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-heading transition hover:border-primary/30 hover:text-primary"
             >
               Back to Home
             </Link>
@@ -129,7 +129,7 @@ export default function ProjectsPage() {
                   <MapPin size={13} />
                   {property.area}
                 </div>
-                <h2 className="mt-3 text-3xl text-accent-light">{property.title}</h2>
+                <h2 className="mt-3 text-3xl text-heading">{property.title}</h2>
                 <p className="mt-2 text-lg font-semibold text-heading">
                   {property.configuration} - {property.price}
                 </p>
