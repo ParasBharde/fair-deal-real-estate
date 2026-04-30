@@ -43,149 +43,219 @@ export const promisePoints: PromisePoint[] = [
 
 export const properties: Property[] = [
   {
-    id: "akurdi-1",
-    title: "Akurdi Skyline Residency",
+    id: "p1",
+    title: "2BHK in Akurdi",
+    price: "₹75L",
     area: "Akurdi",
-    configuration: "2BHK",
-    price: "\u20B975 Lacs",
+    type: "Buy",
+    broker: "Raj Patil",
+    contact: "+91 9876543210",
+    size: "842 sq.ft",
+    pricePerSqft: "₹8.9K",
+    floor: "5/12",
+    facing: "East",
+    status: "Ready",
+    tag: "High Demand",
+    features: ["Near Station", "Parking", "Lift", "Good Light"],
+    note: "Strong rental area, slight negotiation possible",
+    image: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80",
+    overview: "Strategically located near the Akurdi railway station, this unit offers exceptional connectivity for commuters and high rental yield potential for investors.",
     coordinates: [73.7708, 18.6482],
-    image:
-      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"
-    ],
-    summary: "Metro-linked family inventory with strong rental movement and easy daily access.",
-    address: "Near Akurdi Railway Station, PCMC",
-    possession: "Dec 2026",
-    status: "Under Construction",
-    size: "842 sq.ft. carpet",
-    overview:
-      "Akurdi Skyline Residency is designed for end users who want daily mobility, family-ready planning, and dependable resale stability within the PCMC belt.",
-    highlights: [
-      "Walkable access to rail and metro connectivity",
-      "Balanced 2BHK layouts with family-use planning",
-      "Strong rental demand from professionals and local families"
-    ],
-    amenities: ["Club lounge", "Children's play court", "Podium parking", "Security lobby"],
-    tags: ["2bhk", "rental", "family", "metro", "buy"]
+    configuration: "2BHK",
+    gallery: ["https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80"]
   },
   {
-    id: "nigdi-1",
-    title: "Nigdi Golden Courtyard",
+    id: "p2",
+    title: "3BHK in Nigdi",
+    price: "₹98L",
     area: "Nigdi",
-    configuration: "3BHK",
-    price: "\u20B998 Lacs",
+    type: "Buy",
+    broker: "Sanjay Mane",
+    contact: "+91 9922334455",
+    size: "1148 sq.ft",
+    pricePerSqft: "₹8.5K",
+    floor: "2/7",
+    facing: "West",
+    status: "Ready",
+    tag: "Family Choice",
+    features: ["Quiet Area", "School Proximity", "Balcony", "Security"],
+    note: "Prime location near schools; very well maintained property.",
+    image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80",
+    overview: "A spacious 3BHK tailored for families seeking a peaceful residential atmosphere with immediate access to educational institutions.",
     coordinates: [73.7645, 18.6513],
-    image:
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80"
-    ],
-    summary: "Established neighborhood stock preferred by end users seeking schools and civic access.",
-    address: "Sector 24, Nigdi Pradhikaran, PCMC",
-    possession: "Ready to Move",
-    status: "Ready Inventory",
-    size: "1148 sq.ft. carpet",
-    overview:
-      "Nigdi Golden Courtyard serves buyers looking for mature civic infrastructure, tested neighborhood quality, and larger family formats in a stable location.",
-    highlights: [
-      "Located in an established civic and retail zone",
-      "Spacious 3BHK stock for family-led ownership",
-      "Suitable for resale buyers prioritizing long-term livability"
-    ],
-    amenities: ["Multipurpose hall", "Landscaped court", "Visitor parking", "Solar common lighting"],
-    tags: ["3bhk", "family", "resale", "buy", "schools"]
-  },
-  {
-    id: "ravet-1",
-    title: "Ravet Urban Crest",
-    area: "Ravet",
-    configuration: "2BHK",
-    price: "\u20B982 Lacs",
-    coordinates: [73.7458, 18.6437],
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448205-17d3a46c84de?auto=format&fit=crop&w=1200&q=80"
-    ],
-    summary: "Young inventory near highway connectivity, suitable for both first homes and rentals.",
-    address: "Mumbai-Pune Highway Link, Ravet, PCMC",
-    possession: "Jun 2027",
-    status: "New Launch",
-    size: "876 sq.ft. carpet",
-    overview:
-      "Ravet Urban Crest is positioned for first-home buyers and investors who want entry into a fast-moving corridor with future infrastructure upside.",
-    highlights: [
-      "Well-placed for corridor-led price movement",
-      "Compact efficient plans for young buyers and investors",
-      "Useful access to expressway and western micro-markets"
-    ],
-    amenities: ["Sky deck", "Co-working lounge", "Gymnasium", "Double-height arrival lobby"],
-    tags: ["2bhk", "rental", "investment", "buy", "young buyers"]
-  },
-  {
-    id: "kiwale-1",
-    title: "Kiwale Signature Homes",
-    area: "Kiwale",
-    configuration: "2BHK",
-    price: "\u20B968 Lacs",
-    coordinates: [73.7288, 18.6479],
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
-    ],
-    summary: "Value-driven stock with upcoming infrastructure upside and broader ticket flexibility.",
-    address: "Kiwale Growth Zone, Dehu Road Corridor, PCMC",
-    possession: "Mar 2027",
-    status: "Under Construction",
-    size: "801 sq.ft. carpet",
-    overview:
-      "Kiwale Signature Homes targets value-conscious buyers who want to stay inside the PCMC story without stepping into higher ticket pressure too early.",
-    highlights: [
-      "Balanced pricing for first-home and investor demand",
-      "Good fit for budget-driven entry into the western corridor",
-      "Future-facing locality with development upside"
-    ],
-    amenities: ["Jogging track", "Rooftop seating", "Indoor games room", "Retail edge frontage"],
-    tags: ["2bhk", "value", "investment", "buy", "budget"]
-  },
-  {
-    id: "wakad-1",
-    title: "Wakad Platinum Heights",
-    area: "Wakad",
     configuration: "3BHK",
-    price: "\u20B91.25 Cr",
+    gallery: ["https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80"]
+  },
+  {
+    id: "p3",
+    title: "2BHK in Ravet",
+    price: "₹82L",
+    area: "Ravet",
+    type: "Buy",
+    broker: "Anita Deshmukh",
+    contact: "+91 9855667788",
+    size: "876 sq.ft",
+    pricePerSqft: "₹9.3K",
+    floor: "10/22",
+    facing: "North",
+    status: "Ready",
+    tag: "Modern Living",
+    features: ["Clubhouse", "Gym", "Power Backup", "CCTV"],
+    note: "High floor with city views; price slightly firm but worth it.",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80",
+    overview: "Located in the fast-growing Ravet corridor, this property is perfect for young professionals looking for a modern lifestyle.",
+    coordinates: [73.7458, 18.6437],
+    configuration: "2BHK",
+    gallery: ["https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"]
+  },
+  {
+    id: "p4",
+    title: "2BHK in Kiwale",
+    price: "₹68L",
+    area: "Kiwale",
+    type: "Buy",
+    broker: "Vikram Shah",
+    contact: "+91 9766442211",
+    size: "801 sq.ft",
+    pricePerSqft: "₹8.4K",
+    floor: "1/5",
+    facing: "East",
+    status: "Under Construction",
+    tag: "Budget Entry",
+    features: ["Ventilation", "Open Space", "Kitchen Trolley"],
+    note: "Great value for money; possession expected within 6 months.",
+    image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+    overview: "An affordable entry point into the PCMC market without compromising on fundamental quality and space.",
+    coordinates: [73.7288, 18.6479],
+    configuration: "2BHK",
+    gallery: ["https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"]
+  },
+  {
+    id: "p5",
+    title: "3BHK in Wakad",
+    price: "₹1.25 Cr",
+    area: "Wakad",
+    type: "Buy",
+    broker: "Rahul Gupta",
+    contact: "+91 9122334455",
+    size: "1286 sq.ft",
+    pricePerSqft: "₹9.7K",
+    floor: "8/15",
+    facing: "East",
+    status: "Ready",
+    tag: "Premium Hub",
+    features: ["Semi-Furnished", "Modular Kitchen", "Gas Pipeline"],
+    note: "Premium society; excellent connectivity to Hinjewadi IT Park.",
+    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80",
+    overview: "A premium 3BHK unit in the heart of Wakad, specifically targeting IT professionals and corporate families.",
     coordinates: [73.7685, 18.5973],
-    image:
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
-    ],
-    summary: "High-demand urban inventory with premium livability and strong professional tenant pull.",
-    address: "Prime Wakad Link Road, PCMC",
-    possession: "Ready to Move",
-    status: "Ready Inventory",
-    size: "1286 sq.ft. carpet",
-    overview:
-      "Wakad Platinum Heights is aimed at buyers who value polished urban access, stronger rental pull, and a more premium residential profile within the PCMC market.",
-    highlights: [
-      "Premium address with strong professional demand",
-      "Larger 3BHK planning for lifestyle-led ownership",
-      "Suitable for end use and premium rental holding"
-    ],
-    amenities: ["Infinity edge pool", "Fitness studio", "Business lounge", "Concierge reception"],
-    tags: ["3bhk", "premium", "rental", "investment", "buy"]
+    configuration: "3BHK",
+    gallery: ["https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80"]
+  },
+  {
+    id: "p6",
+    title: "2BHK in Akurdi",
+    price: "₹72L",
+    area: "Akurdi",
+    type: "Buy",
+    broker: "Amit Jadhav",
+    contact: "+91 9000000001",
+    size: "810 sq.ft",
+    pricePerSqft: "₹8.8K",
+    floor: "3/10",
+    facing: "West",
+    status: "Ready",
+    tag: "Urgent Sale",
+    features: ["Near Railway", "Lift", "Parking", "Family Society"],
+    note: "Owner relocating, quick deal expected",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+    coordinates: [73.7708, 18.6482],
+    configuration: "2BHK",
+    gallery: ["https://images.unsplash.com/photo-1484154218962-a197022b5858"]
+  },
+  {
+    id: "p7",
+    title: "3BHK in Nigdi",
+    price: "₹1.05Cr",
+    area: "Nigdi",
+    type: "Buy",
+    broker: "Sneha Kulkarni",
+    contact: "+91 9000000002",
+    size: "1150 sq.ft",
+    pricePerSqft: "₹9.1K",
+    floor: "2/7",
+    facing: "East",
+    status: "Ready",
+    tag: "Family Preferred",
+    features: ["Spacious Rooms", "Parking", "Garden View", "Prime Area"],
+    note: "Good for long-term family living, minimal negotiation",
+    image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+    coordinates: [73.7645, 18.6513],
+    configuration: "3BHK",
+    gallery: ["https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd"]
+  },
+  {
+    id: "p8",
+    title: "2BHK in Ravet",
+    price: "₹26K/mo",
+    area: "Ravet",
+    type: "Rent",
+    broker: "Rahul Shinde",
+    contact: "+91 9000000003",
+    size: "870 sq.ft",
+    pricePerSqft: "₹30/sq.ft",
+    floor: "8/14",
+    facing: "North",
+    status: "Ready",
+    tag: "Rental Hotspot",
+    features: ["Highway Access", "Lift", "Gym", "Security"],
+    note: "Strong demand from IT tenants, fast closing",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+    coordinates: [73.7458, 18.6437],
+    configuration: "2BHK",
+    gallery: ["https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"]
+  },
+  {
+    id: "p9",
+    title: "2BHK in Kiwale",
+    price: "₹65L",
+    area: "Kiwale",
+    type: "Buy",
+    broker: "Pooja Deshmukh",
+    contact: "+91 9000000004",
+    size: "790 sq.ft",
+    pricePerSqft: "₹8.2K",
+    floor: "6/12",
+    facing: "East",
+    status: "Under Construction",
+    tag: "Best Value",
+    features: ["Budget Friendly", "New Project", "Parking", "Open View"],
+    note: "Good entry price, future appreciation expected",
+    image: "https://images.unsplash.com/photo-1494526585095-c41746248156",
+    coordinates: [73.7288, 18.6479],
+    configuration: "2BHK",
+    gallery: ["https://images.unsplash.com/photo-1494526585095-c41746248156"]
+  },
+  {
+    id: "p10",
+    title: "3BHK in Wakad",
+    price: "₹1.35Cr",
+    area: "Wakad",
+    type: "Buy",
+    broker: "Karan Mehta",
+    contact: "+91 9000000005",
+    size: "1300 sq.ft",
+    pricePerSqft: "₹10.3K",
+    floor: "10/18",
+    facing: "West",
+    status: "Ready",
+    tag: "Premium Deal",
+    features: ["Prime Location", "Clubhouse", "Parking", "High Floor"],
+    note: "Ideal for professionals, strong resale value",
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+    coordinates: [73.7685, 18.5973],
+    configuration: "3BHK",
+    gallery: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688"]
   }
 ];
 
@@ -329,16 +399,18 @@ export const testimonials: Testimonial[] = [
 
 export const propertyGeoJson: FeatureCollection<Point, { propertyId: string }> = {
   type: "FeatureCollection",
-  features: properties.map(
-    (property): Feature<Point, { propertyId: string }> => ({
-      type: "Feature",
-      properties: { propertyId: property.id },
-      geometry: {
-        type: "Point",
-        coordinates: property.coordinates
-      }
-    })
-  )
+  features: properties
+    .filter((p): p is Property & { coordinates: [number, number] } => !!p.coordinates)
+    .map(
+      (property): Feature<Point, { propertyId: string }> => ({
+        type: "Feature",
+        properties: { propertyId: property.id },
+        geometry: {
+          type: "Point",
+          coordinates: property.coordinates
+        }
+      })
+    )
 };
 
 export const getPropertyById = (id: string) => properties.find((property) => property.id === id);

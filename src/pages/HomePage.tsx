@@ -18,11 +18,26 @@ import {
   testimonials
 } from "../data/content";
 
+import PropertyExplorer from "../components/PropertyExplorer";
+
 const MapHero = lazy(() => import("../components/MapHero"));
 
 export default function HomePage() {
   const [activeArea, setActiveArea] = useState(neighborhoods[0]);
+  const [activeConfig, setActiveConfig] = useState("2BHK");
+  const [activeIntent, setActiveIntent] = useState("Rental");
+
+  const findPropertyForArea = (areaName: string) =>
+    properties.find((property) => property.area.toLowerCase() === areaName.toLowerCase()) ?? properties[0];
+
+  const [selectedProperty, setSelectedProperty] = useState(findPropertyForArea(activeArea.name));
+
   const heroRef = useRef<HTMLDivElement | null>(null);
+
+  const handleAreaChange = (area: typeof neighborhoods[0]) => {
+    setActiveArea(area);
+    setSelectedProperty(findPropertyForArea(area.name));
+  };
 
   usePageSeo({
     title: siteConfig.defaultTitle,
@@ -49,9 +64,28 @@ export default function HomePage() {
             </div>
           }
         >
-          <MapHero focusArea={activeArea} onAreaSelect={setActiveArea} />
+          <MapHero
+            focusArea={activeArea}
+            onAreaSelect={handleAreaChange}
+            selectedProperty={selectedProperty}
+            onPropertySelect={setSelectedProperty}
+            activeConfig={activeConfig}
+            onConfigSelect={setActiveConfig}
+            activeIntent={activeIntent}
+            onIntentSelect={setActiveIntent}
+          />
         </Suspense>
       </div>
+
+      <PropertyExplorer
+        activeArea={activeArea}
+        onAreaSelect={handleAreaChange}
+        activeConfig={activeConfig}
+        onConfigSelect={setActiveConfig}
+        activeIntent={activeIntent}
+        onIntentSelect={setActiveIntent}
+        selectedProperty={selectedProperty}
+      />
 
       <TrustStory highlights={highlights} promisePoints={promisePoints} />
       <ServiceGrid services={services} />

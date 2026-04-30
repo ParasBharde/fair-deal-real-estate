@@ -2,20 +2,30 @@ export interface Property {
   id: string;
   title: string;
   area: string;
-  configuration: string;
   price: string;
-  coordinates: [number, number];
-  image: string;
-  gallery: string[];
-  summary: string;
-  address: string;
-  possession: string;
-  status: string;
+  type: "Buy" | "Rent";
+  broker: string;
+  contact: string;
   size: string;
-  overview: string;
-  highlights: string[];
-  amenities: string[];
-  tags: string[];
+  pricePerSqft: string;
+  floor: string;
+  facing: string;
+  status: string;
+  tag: string;
+  features: string[];
+  note: string;
+  image: string;
+  overview?: string;
+  // Legacy fields (optional for now)
+  configuration?: string;
+  coordinates?: [number, number];
+  gallery?: string[];
+  summary?: string;
+  address?: string;
+  possession?: string;
+  highlights?: string[];
+  amenities?: string[];
+  tags?: string[];
 }
 
 export interface Service {
