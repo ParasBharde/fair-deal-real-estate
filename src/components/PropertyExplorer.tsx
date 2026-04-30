@@ -19,7 +19,6 @@ import {
   Loader2
 } from "lucide-react";
 
-// Updated dataset based on the new schema
 import { properties } from "../data/content";
 
 const neighborhoods = [...new Set(properties.map(p => p.area))];

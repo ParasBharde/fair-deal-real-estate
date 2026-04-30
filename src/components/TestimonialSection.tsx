@@ -8,7 +8,6 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle responsive detection
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
