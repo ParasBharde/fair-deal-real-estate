@@ -69,10 +69,10 @@ export default function TrustStory({ highlights, promisePoints }: TrustStoryProp
                   hidden: { opacity: 0, x: 24 },
                   show: { opacity: 1, x: 0 }
                 }}
-                className={`rounded-3xl border p-5 shadow-panel ${
+                className={`rounded-3xl border-[1.5px] p-5 shadow-panel ${
                   isNavy
-                    ? "border-primary/20 bg-ink"
-                    : "glass-panel"
+                    ? "border-primary/40 bg-ink"
+                    : "glass-panel border-glass-border"
                 }`}
               >
                 <div className="flex items-start gap-4">

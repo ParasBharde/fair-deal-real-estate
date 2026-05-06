@@ -53,7 +53,7 @@ export default function PropertyConciergeForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="rounded-[2rem] border border-primary/20 bg-ink p-6 shadow-panel md:p-8"
+          className="rounded-[2rem] border-[1.5px] border-primary/40 bg-ink p-6 shadow-panel md:p-8"
         >
           <form onSubmit={handleSubmit} className="grid gap-4 md:grid-cols-2">
             <input
