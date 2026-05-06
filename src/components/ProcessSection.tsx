@@ -17,7 +17,7 @@ export default function ProcessSection({ processSteps, supportServices }: Proces
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-[2rem] border border-primary/25 bg-ink p-6 shadow-panel md:p-8"
+            className="relative overflow-hidden rounded-[2rem] border-[1.5px] border-primary/40 bg-ink p-6 shadow-panel md:p-8"
           >
             <div className="primary-grid absolute inset-0 opacity-40" />
             <div className="relative">

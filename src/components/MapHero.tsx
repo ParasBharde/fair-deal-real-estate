@@ -123,7 +123,7 @@ export default function MapHero() {
               {proofStats.map((item, idx) => {
                 const isNavy = idx % 2 == 0;
                 return (
-                  <div key={item.label} className={`${isNavy ? "bg-ink border-primary/25 shadow-panel" : "glass-panel"} rounded-[1.8rem] p-4 flex flex-col justify-center`}>
+                  <div key={item.label} className={`${isNavy ? "bg-ink border-[1.5px] border-primary/40 shadow-panel" : "glass-panel"} rounded-[1.8rem] p-4 flex flex-col justify-center`}>
                     <div className="flex items-center justify-between mb-2">
                        <div className={`rounded-lg p-1.5 ${isNavy ? "bg-white/10" : "bg-primary/10"}`}>
                          {React.cloneElement(item.icon, { className: "text-primary", size: 16 })}
@@ -162,7 +162,7 @@ export default function MapHero() {
               
               <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-between z-30">
                 <div className="flex justify-end">
-                  <div className="rounded-xl border border-white/10 bg-ink p-2 lg:p-3 shadow-2xl">
+                  <div className="rounded-xl border-[1.5px] border-primary/40 bg-ink p-2 lg:p-3 shadow-2xl">
                     <div className="flex items-center gap-2 lg:gap-2.5">
                       <div className="flex h-10 w-10 lg:h-12 lg:w-12 items-center justify-center rounded-lg bg-white/10 text-primary">
                         <BarChart3 size={20} />
@@ -181,7 +181,7 @@ export default function MapHero() {
               </div>
             </div>
 
-            <div className="absolute top-2 left-10 sm:-top-2 sm:left-10 w-25 sm:w-30 rounded-xl bg-ink border border-white/10 p-2.5 sm:p-3.5 shadow-2xl z-40">
+            <div className="absolute top-2 left-10 sm:-top-2 sm:left-10 w-25 sm:w-30 rounded-xl bg-ink border-[1.5px] border-primary/40 p-2.5 sm:p-3.5 shadow-2xl z-40">
               <div className="flex items-center justify-between mb-1.5">
                 <div className="p-1 rounded-lg bg-primary/10">
                   <LineChart size={20} className="text-primary" />

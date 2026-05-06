@@ -110,7 +110,7 @@ const TestimonialCarousel = ({ testimonials = [] }: { testimonials?: any[] }) =>
                   }}
                   className={`p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border shadow-panel overflow-hidden cursor-grab active:cursor-grabbing ${
                     isActive
-                      ? "bg-ink border-ink text-ink-deep shadow-xl"
+                      ? "bg-ink border-primary/40 border-[1.5px] text-ink-deep shadow-xl"
                       : "glass-panel border-glass-border bg-glass"
                   }`}
                 >

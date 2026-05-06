@@ -48,9 +48,9 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                   hidden: { opacity: 0, y: 18 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.45 } }
                 }}
-                className={`group relative overflow-hidden rounded-[2rem] border p-6 shadow-panel ${
+                className={`group relative overflow-hidden rounded-[2rem] border-[1.5px] p-6 shadow-panel ${
                   isNavy
-                    ? "border-primary/25 bg-ink"
+                    ? "border-primary/40 bg-ink"
                     : "border-primary/10 bg-[linear-gradient(180deg,rgba(var(--color-surface),0.86),rgba(var(--color-background),0.96))]"
                 }`}
               >

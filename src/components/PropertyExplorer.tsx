@@ -75,7 +75,7 @@ export default function PropertyExplorer() {
         
         <header className="mb-10">
           <div className="flex flex-col gap-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ink-deep/5 border border-ink-deep/10 text-[10px] font-black uppercase tracking-widest text-primary mb-4 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 w-fit rounded-full bg-ink-deep/5 border border-ink-deep/10 text-[10px] font-black uppercase tracking-widest text-primary mb-4 backdrop-blur-md">
               <Sparkles size={14} />
               Broker Intel v2.0
             </div>
@@ -173,7 +173,7 @@ export default function PropertyExplorer() {
                     transition={{ duration: 0.2 }}
                     className="h-full"
                   >
-                    <div className="group relative bg-ink border-[1.5px] border-[#111827] rounded-[2.5rem] overflow-hidden flex flex-col xl:flex-row min-h-[520px] shadow-panel">
+                    <div className="group relative bg-ink border-[1.5px] border-primary/40 rounded-[2.5rem] overflow-hidden flex flex-col xl:flex-row min-h-[520px] shadow-panel">
                   
                   <div className="w-full xl:w-[45%] relative overflow-hidden h-[300px] xl:h-auto">
                     <img 
@@ -194,7 +194,7 @@ export default function PropertyExplorer() {
                     </div>
                   </div>
 
-                  <div className="flex-1 p-8 md:p-10 flex flex-col justify-between bg-ink border-t-2 xl:border-t-0 xl:border-l-1 border-[#111827]">
+                  <div className="flex-1 p-8 md:p-10 flex flex-col justify-between bg-ink border-t-2 xl:border-t-0 xl:border-l-1 border-primary/40">
                     <div className="space-y-6">
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-primary mb-1">
@@ -206,7 +206,7 @@ export default function PropertyExplorer() {
                         </h2>
                       </div>
 
-                      <div className="flex items-center gap-4 p-4 rounded-2xl bg-ink-deep/5 border-[0.5px] border-[#111827]">
+                      <div className="flex items-center gap-4 p-4 rounded-2xl bg-ink-deep/5 border-[0.5px] border-primary/40">
                         <div className="w-10 h-10 rounded-full bg-ink-deep/10 flex items-center justify-center text-ink-deep">
                           <User size={20} />
                         </div>
@@ -231,7 +231,7 @@ export default function PropertyExplorer() {
                           { label: 'Floor', val: selectedProperty.floor, icon: <Layers size={10}/> },
                           { label: 'Facing', val: selectedProperty.facing, icon: <Compass size={10}/> },
                         ].map((item, idx) => (
-                          <div key={idx} className="px-4 py-3 rounded-xl bg-ink-deep/5 border-[0.5px] border-[#111827] flex flex-col gap-0.5">
+                          <div key={idx} className="px-4 py-3 rounded-xl bg-ink-deep/5 border-[0.5px] border-primary/40 flex flex-col gap-0.5">
                             <span className="text-[8px] uppercase font-black text-ink-deep/50 tracking-widest flex items-center gap-1">
                               {item.icon} {item.label}
                             </span>
@@ -250,7 +250,7 @@ export default function PropertyExplorer() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t-2 border-[#111827] mt-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t-2 border-primary/40 mt-8">
                       <div className="flex flex-col">
                         <span className="text-[9px] uppercase font-black text-ink-deep/50 tracking-[0.2em] mb-1">Final Asking</span>
                         <span className="text-2xl font-bold text-ink-deep">{selectedProperty.price}</span>
